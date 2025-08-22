@@ -102,7 +102,7 @@ export default function PricingSection() {
                   {plan.title}
                 </CardTitle>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-blue-600">
+                  <span className="text-4xl font-bold text-blue-700">
                     {plan.price}
                   </span>
                 </div>
@@ -215,7 +215,7 @@ export default function PricingSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 hover:scale-105 transform duration-200"
+                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200"
                 onClick={() => window.open("tel:0966616636")}
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -224,7 +224,7 @@ export default function PricingSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-blue-600 hover:bg-white hover:text-blue-600 hover:scale-105 transform duration-200"
+                className="border-white text-blue-700 hover:bg-white hover:text-blue-700 hover:scale-105 transform duration-200"
                 onClick={() =>
                   window.open("https://zalo.me/0966616636", "_blank")
                 }

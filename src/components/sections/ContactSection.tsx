@@ -304,7 +304,7 @@ export default function ContactSection() {
               <CardContent className="pt-0 space-y-2">
                 <div className="flex items-center space-x-3">
                   <div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Phone className="w-3.5 h-3.5 text-blue-600" />
+                    <Phone className="w-3.5 h-3.5 text-blue-700" />
                   </div>
                   <div>
                     <p className="font-medium text-gray-900 text-sm">Hotline</p>
@@ -338,7 +338,7 @@ export default function ContactSection() {
 
                 <div className="flex items-center space-x-3">
                   <div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Facebook className="w-3.5 h-3.5 text-blue-600" />
+                    <Facebook className="w-3.5 h-3.5 text-blue-700" />
                   </div>
                   <div>
                     <p className="font-medium text-gray-900 text-sm">
@@ -591,7 +591,7 @@ export default function ContactSection() {
                 </p>
                 <div className="space-y-3">
                   <Button
-                    className="w-full bg-white text-blue-600 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3"
+                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3"
                     onClick={() => window.open("tel:0966616636")}
                   >
                     <Phone className="w-4 h-4 mr-2" />
@@ -599,7 +599,7 @@ export default function ContactSection() {
                   </Button>
                   <Button
                     variant="outline"
-                    className="w-full border-white text-blue-600 hover:bg-white hover:text-blue-600 hover:scale-105 transform duration-200 py-3"
+                    className="w-full border-white text-blue-700 hover:bg-white hover:text-blue-700 hover:scale-105 transform duration-200 py-3"
                     onClick={() =>
                       window.open("https://zalo.me/0966616636", "_blank")
                     }

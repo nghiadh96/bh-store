@@ -126,7 +126,7 @@ export default function PortfolioSection() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
+                  <span className="text-xs font-medium text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
                     {item.category}
                   </span>
                   <div className="flex space-x-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
@@ -166,7 +166,7 @@ export default function PortfolioSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-blue-600 hover:bg-white hover:text-blue-600 hover:scale-105 transform duration-200"
+                className="border-white text-blue-700 hover:bg-white hover:text-blue-700 hover:scale-105 transform duration-200"
                 onClick={() => smoothScrollTo("contact")}
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
@@ -197,7 +197,7 @@ export default function PortfolioSection() {
                   <h3 className="text-2xl font-bold text-gray-900">
                     {selectedProduct.title}
                   </h3>
-                  <span className="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
                     {selectedProduct.category}
                   </span>
                 </div>
@@ -231,7 +231,7 @@ export default function PortfolioSection() {
             <div className="space-y-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Download className="w-8 h-8 text-blue-600" />
+                  <Download className="w-8 h-8 text-blue-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {selectedProduct.title}

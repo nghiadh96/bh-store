@@ -144,8 +144,8 @@ export default function Header() {
               onClick={() => smoothScrollTo("home")}
               className={`font-medium transition-colors md:hover:scale-105 transform duration-200 ${
                 activeSection === "home"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-700 border-b-2 border-blue-700"
+                  : "text-gray-700 hover:text-blue-700"
               }`}
             >
               Trang chủ
@@ -154,8 +154,8 @@ export default function Header() {
               onClick={() => smoothScrollTo("about")}
               className={`font-medium transition-colors md:hover:scale-105 transform duration-200 ${
                 activeSection === "about"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-700 border-b-2 border-blue-700"
+                  : "text-gray-700 hover:text-blue-700"
               }`}
             >
               Về chúng tôi
@@ -164,8 +164,8 @@ export default function Header() {
               onClick={() => smoothScrollTo("services")}
               className={`font-medium transition-colors md:hover:scale-105 transform duration-200 ${
                 activeSection === "services"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-700 border-b-2 border-blue-700"
+                  : "text-gray-700 hover:text-blue-700"
               }`}
             >
               Dịch vụ
@@ -174,8 +174,8 @@ export default function Header() {
               onClick={() => smoothScrollTo("portfolio")}
               className={`font-medium transition-colors md:hover:scale-105 transform duration-200 ${
                 activeSection === "portfolio"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-700 border-b-2 border-blue-700"
+                  : "text-gray-700 hover:text-blue-700"
               }`}
             >
               Sản phẩm
@@ -184,8 +184,8 @@ export default function Header() {
               onClick={() => smoothScrollTo("pricing")}
               className={`font-medium transition-colors md:hover:scale-105 transform duration-200 ${
                 activeSection === "pricing"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-700 border-b-2 border-blue-700"
+                  : "text-gray-700 hover:text-blue-700"
               }`}
             >
               Báo giá
@@ -194,8 +194,8 @@ export default function Header() {
               onClick={() => smoothScrollTo("contact")}
               className={`font-medium transition-colors md:hover:scale-105 transform duration-200 ${
                 activeSection === "contact"
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-blue-700 border-b-2 border-blue-700"
+                  : "text-gray-700 hover:text-blue-700"
               }`}
             >
               Liên hệ
@@ -217,13 +217,15 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-gray-100 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Đóng menu" : "Mở menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6" aria-hidden="true" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -240,8 +242,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-colors ${
                   activeSection === "home"
-                    ? "text-blue-600 bg-blue-50 border-l-4 border-blue-600"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-blue-700 bg-blue-50 border-l-4 border-blue-700"
+                    : "text-gray-700 hover:text-blue-700 hover:bg-gray-50"
                 }`}
               >
                 Trang chủ
@@ -253,8 +255,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-colors ${
                   activeSection === "about"
-                    ? "text-blue-600 bg-blue-50 border-l-4 border-blue-600"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-blue-700 bg-blue-50 border-l-4 border-blue-700"
+                    : "text-gray-700 hover:text-blue-700 hover:bg-gray-50"
                 }`}
               >
                 Về chúng tôi
@@ -266,8 +268,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-colors ${
                   activeSection === "services"
-                    ? "text-blue-600 bg-blue-50 border-l-4 border-blue-600"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-blue-700 bg-blue-50 border-l-4 border-blue-700"
+                    : "text-gray-700 hover:text-blue-700 hover:bg-gray-50"
                 }`}
               >
                 Dịch vụ
@@ -279,8 +281,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-colors ${
                   activeSection === "portfolio"
-                    ? "text-blue-600 bg-blue-50 border-l-4 border-blue-600"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-blue-700 bg-blue-50 border-l-4 border-blue-700"
+                    : "text-gray-700 hover:text-blue-700 hover:bg-gray-50"
                 }`}
               >
                 Sản phẩm
@@ -292,8 +294,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-colors ${
                   activeSection === "pricing"
-                    ? "text-blue-600 bg-blue-50 border-l-4 border-blue-600"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-blue-700 bg-blue-50 border-l-4 border-blue-700"
+                    : "text-gray-700 hover:text-blue-700 hover:bg-gray-50"
                 }`}
               >
                 Báo giá
@@ -305,8 +307,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-colors ${
                   activeSection === "contact"
-                    ? "text-blue-600 bg-blue-50 border-l-4 border-blue-600"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-blue-700 bg-blue-50 border-l-4 border-blue-700"
+                    : "text-gray-700 hover:text-blue-700 hover:bg-gray-50"
                 }`}
               >
                 Liên hệ

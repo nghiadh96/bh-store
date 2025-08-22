@@ -193,7 +193,7 @@ export default function ServicesSection() {
                 }}
               >
                 <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                  <Star className="w-5 h-5 text-blue-600 mr-2" />
+                  <Star className="w-5 h-5 text-blue-700 mr-2" />
                   {category.title}
                 </h4>
                 <ul className="space-y-2">
@@ -272,7 +272,7 @@ export default function ServicesSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 hover:scale-105 transform duration-200"
+                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200"
                 onClick={() => window.open("tel:0966616636")}
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -281,7 +281,7 @@ export default function ServicesSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-white text-blue-600 hover:bg-gray-100 hover:scale-105 hover:text-blue-600 transform duration-200"
+                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 hover:text-blue-700 transform duration-200"
                 onClick={() =>
                   window.open("https://zalo.me/0966616636", "_blank")
                 }

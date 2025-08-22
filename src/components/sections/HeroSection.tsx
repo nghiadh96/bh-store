@@ -86,7 +86,7 @@ export default function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white md:hover:scale-105 transform duration-200"
+              className="text-lg px-8 py-4 border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white md:hover:scale-105 transform duration-200"
               onClick={() => {
                 trackZaloChat();
                 window.open("https://zalo.me/0966616636", "_blank");
@@ -119,7 +119,7 @@ export default function HeroSection() {
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
                 <Award className="w-6 h-6 text-white" />
               </div>
-              <p className="text-2xl font-bold text-blue-600">500+</p>
+              <p className="text-2xl font-bold text-blue-700">500+</p>
               <p className="text-sm text-gray-600">Dự án hoàn thành</p>
             </div>
             <div className="text-center bg-white/80 rounded-lg p-4 backdrop-blur-sm">

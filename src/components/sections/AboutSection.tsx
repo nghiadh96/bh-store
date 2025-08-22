@@ -104,7 +104,7 @@ export default function AboutSection() {
               {/* Stats overlay */}
               <div className="grid grid-cols-3 gap-4 mt-6">
                 <div className="text-center bg-white rounded-lg p-3">
-                  <p className="text-2xl font-bold text-blue-600">500+</p>
+                  <p className="text-2xl font-bold text-blue-700">500+</p>
                   <p className="text-xs text-gray-600">Dự án</p>
                 </div>
                 <div className="text-center bg-white rounded-lg p-3">
