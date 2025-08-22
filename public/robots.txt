@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://bhdesignmedia.com/sitemap.xml
+Sitemap: https://bh-design-media.netlify.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
