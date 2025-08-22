@@ -25,22 +25,26 @@ export default function Header() {
           "pricing",
           "contact",
         ];
-        const scrollPosition = window.scrollY + 100; // Offset để tính toán chính xác hơn
+        const scrollPosition = window.scrollY + 150; // Tăng offset để tính toán chính xác hơn
 
-        for (const section of sections) {
+        // Tìm section hiện tại dựa trên vị trí scroll
+        let currentSection = "home";
+
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = sections[i];
           const element = document.getElementById(section);
           if (element) {
             const offsetTop = element.offsetTop;
-            const offsetHeight = element.offsetHeight;
 
-            if (
-              scrollPosition >= offsetTop &&
-              scrollPosition < offsetTop + offsetHeight
-            ) {
-              setActiveSection(section);
+            if (scrollPosition >= offsetTop) {
+              currentSection = section;
               break;
             }
           }
+        }
+
+        if (currentSection !== activeSection) {
+          setActiveSection(currentSection);
         }
       }, 50); // Debounce 50ms
     };

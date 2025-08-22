@@ -30,7 +30,6 @@ export default function HeroSection() {
           alt="Printing and Design Background"
           className="w-full h-full object-cover"
           loading="eager"
-          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/90"></div>
       </div>

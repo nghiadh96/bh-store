@@ -9,18 +9,31 @@ import ContactSection from "./components/sections/ContactSection";
 import Footer from "./components/layout/Footer";
 import FloatingButtons from "./components/ui/FloatingButtons";
 
+// Declare AOS as global
+declare global {
+  interface Window {
+    AOS: any;
+  }
+}
+
 function App() {
   useEffect(() => {
-    // Load AOS immediately
-    import("aos").then((AOS) => {
-      AOS.default.init({
-        duration: 800,
-        easing: "ease-in-out",
+    // Initialize AOS after component mounts
+    if (typeof window !== "undefined" && window.AOS) {
+      // Check if device is mobile
+      const isMobile = window.innerWidth < 768;
+
+      window.AOS.init({
+        duration: isMobile ? 600 : 1000, // Faster on mobile
+        easing: "ease-out", // Simpler easing for mobile
         once: true,
-        offset: 100,
-        disable: "mobile",
+        offset: isMobile ? 50 : 100, // Smaller offset on mobile
+        disable: isMobile ? false : false, // Keep enabled on mobile but with simpler settings
+        // Mobile optimizations
+        throttleDelay: isMobile ? 50 : 99, // Faster throttle on mobile
+        debounceDelay: isMobile ? 50 : 50, // Faster debounce on mobile
       });
-    });
+    }
   }, []);
 
   return (

@@ -151,12 +151,12 @@ export default function Footer() {
                 <Star className="w-4 h-4 mr-2" />
                 Ưu đãi đặc biệt
               </h5>
-              <p className="text-sm">
+              <div className="text-sm">
                 Giảm 10% cho khách hàng mới
                 <Badge variant="secondary" className="ml-2">
                   HOT
                 </Badge>
-              </p>
+              </div>
             </div>
           </div>
         </div>

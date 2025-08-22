@@ -109,7 +109,11 @@ export default function ServicesSection() {
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div
+          className="text-center mb-16"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <Badge variant="outline" className="mb-4">
             <Award className="w-4 h-4 mr-2" />
             Dịch vụ của chúng tôi
@@ -129,6 +133,8 @@ export default function ServicesSection() {
             <Card
               key={index}
               className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg border-t-4"
+              data-aos="fade-up"
+              data-aos-delay={(index + 1) * 100}
               style={{
                 borderTopColor:
                   index === 0
@@ -139,8 +145,6 @@ export default function ServicesSection() {
                     ? "#F59E0B"
                     : "#8B5CF6",
               }}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
             >
               <CardHeader className="text-center pb-4">
                 <div

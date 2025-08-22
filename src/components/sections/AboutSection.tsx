@@ -9,7 +9,12 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="space-y-6" data-aos="fade-right" data-aos-delay="100">
+          <div
+            className="space-y-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-once="true"
+          >
             <Badge
               variant="outline"
               className="bg-blue-100 text-blue-800 border-blue-400"
@@ -40,7 +45,8 @@ export default function AboutSection() {
             <div
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6"
               data-aos="fade-up"
-              data-aos-delay="300"
+              data-aos-delay="500"
+              data-aos-once="true"
             >
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -67,7 +73,8 @@ export default function AboutSection() {
             <div
               className="flex flex-col sm:flex-row gap-4 pt-6"
               data-aos="fade-up"
-              data-aos-delay="400"
+              data-aos-delay="600"
+              data-aos-once="true"
             >
               <Button
                 className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transform duration-200"
@@ -88,7 +95,12 @@ export default function AboutSection() {
           </div>
 
           {/* Image */}
-          <div className="relative" data-aos="fade-left" data-aos-delay="200">
+          <div
+            className="relative"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-once="true"
+          >
             <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8">
               <div className="aspect-video rounded-lg overflow-hidden relative">
                 <img
@@ -112,8 +124,9 @@ export default function AboutSection() {
               {/* Stats overlay */}
               <div
                 className="grid grid-cols-3 gap-4 mt-6"
-                data-aos="zoom-in"
-                data-aos-delay="500"
+                data-aos="fade-up"
+                data-aos-delay="700"
+                data-aos-once="true"
               >
                 <div className="text-center bg-white rounded-lg p-3">
                   <p className="text-2xl font-bold text-blue-700">500+</p>
