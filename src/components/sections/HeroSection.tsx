@@ -38,7 +38,7 @@ export default function HeroSection() {
         <div className="text-center max-w-5xl mx-auto my-4 md:my-0">
           <Badge
             variant="outline"
-            className="bg-white/90 text-blue-700 border-blue-300 mb-6"
+            className="bg-white/95 text-blue-800 border-blue-400 mb-6"
             data-aos="fade-down"
             data-aos-delay="200"
           >
@@ -98,7 +98,7 @@ export default function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-4 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white md:hover:scale-105 transform duration-200"
+              className="text-lg px-8 py-4 border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-white md:hover:scale-105 transform duration-200"
               onClick={() => {
                 trackScrollToSection("portfolio");
                 smoothScrollTo("portfolio");

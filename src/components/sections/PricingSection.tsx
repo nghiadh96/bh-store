@@ -191,7 +191,7 @@ export default function PricingSection() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600">Đơn hàng trên 5 triệu</span>
-                  <Badge className="bg-blue-100 text-blue-700">Giảm 15%</Badge>
+                  <Badge className="bg-blue-100 text-blue-800">Giảm 15%</Badge>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600">Khách hàng thân thiết</span>

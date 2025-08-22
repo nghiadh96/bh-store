@@ -12,7 +12,7 @@ export default function AboutSection() {
           <div className="space-y-6" data-aos="fade-right">
             <Badge
               variant="outline"
-              className="bg-blue-100 text-blue-700 border-blue-300"
+              className="bg-blue-100 text-blue-800 border-blue-400"
             >
               <Award className="w-4 h-4 mr-2" />
               Về chúng tôi
