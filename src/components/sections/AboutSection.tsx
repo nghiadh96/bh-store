@@ -84,7 +84,7 @@ export default function AboutSection() {
             <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8">
               <div className="aspect-video rounded-lg overflow-hidden relative">
                 <img
-                  src="/images/about-shop.jpg"
+                  src="/images/about-shop.webp"
                   alt="BH Design & Media - Printing and Design Shop"
                   className="w-full h-full object-cover"
                 />
