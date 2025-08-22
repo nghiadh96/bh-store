@@ -21,39 +21,34 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden hero-section"
     >
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 hero-bg">
         <img
           src="/images/hero-bg.webp"
           alt="Printing and Design Background"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/90"></div>
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-5xl mx-auto my-4 md:my-0">
-          <Badge
-            variant="outline"
-            className="bg-white/95 text-blue-800 border-blue-400 mb-6"
-          >
+        <div className="text-center max-w-5xl mx-auto my-4 md:my-0 hero-content">
+          <Badge variant="outline" className="hero-badge">
             <Star className="w-4 h-4 mr-2" />
             Chuyên nghiệp - Uy tín - Chất lượng
           </Badge>
 
-          <h1
-            className="text-4xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl"
-          >
+          <h1 className="hero-title">
             Thiết Kế - In Ấn - Thi Công
             <span className="text-blue-300 block">Chuyên Nghiệp</span>
           </h1>
 
-          <p
-            className="text-xl lg:text-2xl text-white leading-relaxed mb-8 max-w-4xl mx-auto drop-shadow-lg"
-          >
+          <p className="hero-subtitle">
             BH Design & Media chuyên cung cấp dịch vụ thiết kế banner, poster,
             standee, in phun khổ lớn, thi công biển quảng cáo tại Thái Thụy,
             Thái Bình. Tư vấn khảo sát thiết kế miễn phí, thời gian bảo hành 12
@@ -61,9 +56,7 @@ export default function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-          >
+          <div className="hero-buttons">
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4 text-white md:hover:scale-105 transform duration-200"
@@ -102,9 +95,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div
-            className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
-          >
+          <div className="hero-stats">
             <div className="text-center bg-white/80 rounded-lg p-4 backdrop-blur-sm">
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
                 <Award className="w-6 h-6 text-white" />
