@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import * as AOS from "aos";
+import { useEffect, useState } from "react";
 import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/HeroSection";
 import AboutSection from "./components/sections/AboutSection";
@@ -11,20 +10,29 @@ import Footer from "./components/layout/Footer";
 import FloatingButtons from "./components/ui/FloatingButtons";
 
 function App() {
-  useEffect(() => {
-    // Khởi tạo AOS với delay để không block rendering
-    const timer = setTimeout(() => {
-      AOS.init({
-        duration: 800,
-        easing: "ease-in-out",
-        once: true,
-        offset: 100,
-        disable: "mobile", // Disable trên mobile để tăng performance
-      });
-    }, 100);
+  const [aosLoaded, setAosLoaded] = useState(false);
 
-    return () => clearTimeout(timer);
-  }, []);
+  useEffect(() => {
+    // Load AOS only when user scrolls
+    const handleScroll = () => {
+      if (!aosLoaded && window.scrollY > 100) {
+        import("aos").then((AOS) => {
+          AOS.default.init({
+            duration: 800,
+            easing: "ease-in-out",
+            once: true,
+            offset: 100,
+            disable: "mobile",
+          });
+          setAosLoaded(true);
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [aosLoaded]);
 
   return (
     <div className="min-h-screen bg-white">
