@@ -1,0 +1,22 @@
+{
+  "name": "BH Design & Media",
+  "short_name": "BH Design",
+  "description": "Thiết kế banner, in phun khổ lớn, thi công biển quảng cáo tại Thái Thụy, Thái Bình",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
