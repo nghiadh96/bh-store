@@ -12,13 +12,18 @@ import FloatingButtons from "./components/ui/FloatingButtons";
 
 function App() {
   useEffect(() => {
-    // Khởi tạo AOS
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      once: true, // Animation sẽ chạy lại mỗi khi scroll
-      offset: 100,
-    });
+    // Khởi tạo AOS với delay để không block rendering
+    const timer = setTimeout(() => {
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+        disable: "mobile", // Disable trên mobile để tăng performance
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (

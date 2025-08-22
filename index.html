@@ -9,6 +9,20 @@
     <meta name="theme-color" content="#3B82F6" />
     <meta name="google-site-verification" content="60Uwtw3bSkklZawhUYOyJpwSpE3573GLXRmY1mDay7g" />
     <meta name="msapplication-TileColor" content="#3B82F6" />
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      /* Critical styles for hero section */
+      .hero-section { min-height: 85vh; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+      .hero-bg { position: absolute; inset: 0; z-index: 0; }
+      .hero-content { position: relative; z-index: 10; text-align: center; max-width: 80rem; margin: 0 auto; }
+      .hero-title { font-size: 2.25rem; font-weight: 700; color: white; line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+      .hero-subtitle { font-size: 1.125rem; color: white; line-height: 1.6; margin-bottom: 2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+      @media (min-width: 768px) {
+        .hero-title { font-size: 4.5rem; }
+        .hero-subtitle { font-size: 1.5rem; }
+      }
+    </style>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="BH Design & Media" />
@@ -109,12 +123,12 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD026ZGERW"></script>
