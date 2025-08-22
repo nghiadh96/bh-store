@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/HeroSection";
 import AboutSection from "./components/sections/AboutSection";
@@ -10,29 +10,18 @@ import Footer from "./components/layout/Footer";
 import FloatingButtons from "./components/ui/FloatingButtons";
 
 function App() {
-  const [aosLoaded, setAosLoaded] = useState(false);
-
   useEffect(() => {
-    // Load AOS only when user scrolls
-    const handleScroll = () => {
-      if (!aosLoaded && window.scrollY > 100) {
-        import("aos").then((AOS) => {
-          AOS.default.init({
-            duration: 800,
-            easing: "ease-in-out",
-            once: true,
-            offset: 100,
-            disable: "mobile",
-          });
-          setAosLoaded(true);
-        });
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [aosLoaded]);
+    // Load AOS immediately
+    import("aos").then((AOS) => {
+      AOS.default.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+        disable: "mobile",
+      });
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">

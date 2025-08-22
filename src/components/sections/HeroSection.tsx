@@ -39,8 +39,6 @@ export default function HeroSection() {
           <Badge
             variant="outline"
             className="bg-white/95 text-blue-800 border-blue-400 mb-6"
-            data-aos="fade-down"
-            data-aos-delay="200"
           >
             <Star className="w-4 h-4 mr-2" />
             Chuyên nghiệp - Uy tín - Chất lượng
@@ -48,8 +46,6 @@ export default function HeroSection() {
 
           <h1
             className="text-4xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl"
-            data-aos="fade-up"
-            data-aos-delay="400"
           >
             Thiết Kế - In Ấn - Thi Công
             <span className="text-blue-300 block">Chuyên Nghiệp</span>
@@ -57,8 +53,6 @@ export default function HeroSection() {
 
           <p
             className="text-xl lg:text-2xl text-white leading-relaxed mb-8 max-w-4xl mx-auto drop-shadow-lg"
-            data-aos="fade-up"
-            data-aos-delay="600"
           >
             BH Design & Media chuyên cung cấp dịch vụ thiết kế banner, poster,
             standee, in phun khổ lớn, thi công biển quảng cáo tại Thái Thụy,
@@ -69,8 +63,6 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-            data-aos="fade-up"
-            data-aos-delay="800"
           >
             <Button
               size="lg"
@@ -112,8 +104,6 @@ export default function HeroSection() {
           {/* Stats */}
           <div
             className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="1000"
           >
             <div className="text-center bg-white/80 rounded-lg p-4 backdrop-blur-sm">
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
