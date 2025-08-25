@@ -238,6 +238,11 @@ export const translations = {
     contact_service_construction: "Thi công (Biển quảng cáo, CNC)",
     contact_service_consultation: "Tư vấn tổng thể",
 
+    floating_call_phone: "Gọi điện",
+    floating_chat_zalo: "Chat Zalo",
+    floating_send_email: "Gửi email",
+    floating_scroll_top: "Lên đầu trang",
+
     // Contact Section
     contact_title: "Liên hệ với chúng tôi",
     contact_subtitle: "Hãy để lại thông tin để được tư vấn miễn phí",
