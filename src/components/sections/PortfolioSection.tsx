@@ -1,75 +1,72 @@
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "../ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
 import { Image, Eye, Download, MessageCircle, Phone, Mail } from "lucide-react";
 import { smoothScrollTo } from "../../utils/scroll";
 import { useState } from "react";
+import { useTranslation } from "../../translations/index";
 
-const portfolioItems = [
+const getPortfolioItems = (t: any) => [
   {
     id: 1,
-    title: "Banner Quảng cáo",
-    category: "Thiết kế",
-    description: "Banner khổ lớn cho sự kiện",
+    title: t.portfolio_item1_title,
+    category: t.portfolio_item1_category,
+    description: t.portfolio_item1_desc,
     image: "/images/portfolio-1-banner.webp",
   },
   {
     id: 2,
-    title: "Poster Sự kiện",
-    category: "Thiết kế",
-    description: "Poster chuyên nghiệp",
+    title: t.portfolio_item2_title,
+    category: t.portfolio_item2_category,
+    description: t.portfolio_item2_desc,
     image: "/images/portfolio-2-poster.webp",
   },
   {
     id: 3,
-    title: "Standee Quảng cáo",
-    category: "Thiết kế",
-    description: "Standee đứng chuyên nghiệp",
+    title: t.portfolio_item3_title,
+    category: t.portfolio_item3_category,
+    description: t.portfolio_item3_desc,
     image: "/images/portfolio-3-standee.webp",
   },
   {
     id: 4,
-    title: "Biển Quảng cáo",
-    category: "Thi công",
-    description: "Biển LED ngoài trời",
+    title: t.portfolio_item4_title,
+    category: t.portfolio_item4_category,
+    description: t.portfolio_item4_desc,
     image: "/images/portfolio-4-billboard.webp",
   },
   {
     id: 5,
-    title: "In Decal",
-    category: "In ấn",
-    description: "Decal dán kính chất lượng cao",
+    title: t.portfolio_item5_title,
+    category: t.portfolio_item5_category,
+    description: t.portfolio_item5_desc,
     image: "/images/portfolio-5-decal.webp",
   },
   {
     id: 6,
-    title: "Photocopy",
-    category: "In ấn",
-    description: "In ấn tài liệu số lượng lớn",
+    title: t.portfolio_item6_title,
+    category: t.portfolio_item6_category,
+    description: t.portfolio_item6_desc,
     image: "/images/portfolio-6-photocopy.webp",
   },
   {
     id: 7,
-    title: "Chữ nổi Alu",
-    category: "Thi công",
-    description: "Chữ nổi cao cấp",
+    title: t.portfolio_item7_title,
+    category: t.portfolio_item7_category,
+    description: t.portfolio_item7_desc,
     image: "/images/portfolio-7-signage.webp",
   },
   {
     id: 8,
-    title: "Hộp đèn",
-    category: "Thi công",
-    description: "Hộp đèn quảng cáo",
+    title: t.portfolio_item8_title,
+    category: t.portfolio_item8_category,
+    description: t.portfolio_item8_desc,
     image: "/images/portfolio-8-led.webp",
   },
 ];
 
 export default function PortfolioSection() {
+  const t = useTranslation();
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
@@ -87,30 +84,34 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <section
+      id="portfolio"
+      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <Badge variant="outline" className="mb-4">
+          <Badge
+            variant="outline"
+            className="mb-4 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
+          >
             <Image className="w-4 h-4 mr-2" />
-            Portfolio
+            {t.portfolio_badge}
           </Badge>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Sản phẩm mẫu của chúng tôi
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t.portfolio_title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Khám phá các dự án tiêu biểu đã được BH Design & Media thực hiện
-            thành công. Mỗi sản phẩm đều thể hiện sự sáng tạo và chất lượng
-            chuyên nghiệp.
+          <p className="text-xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+            {t.portfolio_subtitle}
           </p>
         </div>
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {portfolioItems.map((item, index) => (
+          {getPortfolioItems(t).map((item: any, index: number) => (
             <div
               key={item.id}
-              className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
               data-aos="zoom-in"
               data-aos-delay={index * 100}
             >
@@ -126,29 +127,33 @@ export default function PortfolioSection() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
+                  <span className="text-xs font-medium text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full">
                     {item.category}
                   </span>
                   <div className="flex space-x-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                     <button
                       onClick={() => handleViewProduct(item)}
-                      className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-blue-100 transition-colors md:hover:scale-110 transform duration-200"
-                      title="Xem chi tiết"
+                      className="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-600 transition-colors md:hover:scale-110 transform duration-200"
+                      title={t.portfolio_view}
                     >
-                      <Eye className="w-4 h-4 text-gray-600" />
+                      <Eye className="w-4 h-4 text-gray-600 dark:text-gray-300" />
                     </button>
                     <button
                       onClick={() => handleDownloadProduct(item)}
-                      className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-green-100 transition-colors md:hover:scale-110 transform duration-200"
-                      title="Tải xuống"
+                      className="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-green-100 dark:hover:bg-green-600 transition-colors md:hover:scale-110 transform duration-200"
+                      title={t.portfolio_download}
                     >
-                      <Download className="w-4 h-4 text-gray-600" />
+                      <Download className="w-4 h-4 text-gray-600 dark:text-gray-300" />
                     </button>
                   </div>
                 </div>
 
-                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-700 dark:text-gray-200">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
@@ -156,21 +161,17 @@ export default function PortfolioSection() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Bạn có dự án tương tự?</h3>
-            <p className="text-blue-100 mb-6">
-              Hãy liên hệ ngay để được tư vấn và báo giá chi tiết cho dự án của
-              bạn
-            </p>
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-2xl p-8 text-white shadow-xl">
+            <h3 className="text-2xl font-bold mb-4">{t.portfolio_cta_title}</h3>
+            <p className="text-blue-50 mb-6">{t.portfolio_cta_desc}</p>
             <div className="flex justify-center">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white text-blue-700 hover:bg-white hover:text-blue-700 hover:scale-105 transform duration-200"
+                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
                 onClick={() => smoothScrollTo("contact")}
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
-                Tư vấn miễn phí
+                {t.portfolio_cta_button}
               </Button>
             </div>
           </div>
@@ -194,21 +195,21 @@ export default function PortfolioSection() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-gray-900">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {selectedProduct.title}
                   </h3>
-                  <span className="text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 px-3 py-1 rounded-full">
                     {selectedProduct.category}
                   </span>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
                   {selectedProduct.description}
                 </p>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
                     Thông tin chi tiết:
                   </h4>
-                  <ul className="space-y-1 text-sm text-gray-600">
+                  <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-200">
                     <li>• Chất liệu: Cao cấp, bền bỉ</li>
                     <li>• Kích thước: Tùy chỉnh theo yêu cầu</li>
                     <li>• Thời gian thi công: 3-7 ngày</li>
@@ -233,10 +234,10 @@ export default function PortfolioSection() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Download className="w-8 h-8 text-blue-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {selectedProduct.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-700 dark:text-gray-200">
                   Liên hệ với chúng tôi để nhận file chất lượng cao!
                 </p>
               </div>

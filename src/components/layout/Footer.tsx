@@ -1,10 +1,13 @@
 import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+import { useTranslation } from "../../translations/index";
 import logo from "../../assets/images/bhstore.png";
 import { smoothScrollTo } from "../../utils/scroll";
 
 export default function Footer() {
+  const t = useTranslation();
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
@@ -21,16 +24,10 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="font-bold text-lg">BH Design & Media</h3>
-                <p className="text-sm text-gray-400">
-                  Thiết kế & In ấn Quảng cáo
-                </p>
+                <p className="text-sm text-gray-300">{t.footer_tagline}</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm">
-              Chuyên cung cấp dịch vụ thiết kế, in ấn và thi công biển quảng cáo
-              với chất lượng cao, giá cả hợp lý. Tư vấn khảo sát thiết kế miễn
-              phí.
-            </p>
+            <p className="text-gray-300 text-sm">{t.footer_description}</p>
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/tuanbaodtb"
@@ -59,61 +56,61 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h4 className="font-bold text-lg">Dịch vụ chính</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>🎨 Thiết kế Banner - Poster</li>
-              <li>🖨️ In phun khổ lớn</li>
-              <li>🏗️ Thi công biển quảng cáo</li>
-              <li>⚙️ Gia công CNC</li>
-              <li>📋 Standee - Ấn phẩm</li>
-              <li>🏷️ In decal - Photocopy</li>
-              <li>💡 Biển LED - Hộp đèn</li>
-              <li>🏢 Biển tòa nhà - Chữ nổi</li>
+            <h4 className="font-bold text-lg">{t.services_title}</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>🎨 {t.services_design_title}</li>
+              <li>🖨️ {t.services_printing_title}</li>
+              <li>🏗️ {t.services_construction_title}</li>
+              <li>⚙️ {t.footer_services_cnc}</li>
+              <li>📋 {t.footer_services_standee}</li>
+              <li>🏷️ {t.footer_services_decal}</li>
+              <li>💡 {t.footer_services_led}</li>
+              <li>🏢 {t.footer_services_building}</li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-bold text-lg">Liên kết nhanh</h4>
+            <h4 className="font-bold text-lg">{t.footer_quick_links}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <button
                   onClick={() => smoothScrollTo("home")}
-                  className="text-gray-400 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
+                  className="text-gray-300 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
                 >
-                  Trang chủ
+                  {t.nav_home}
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => smoothScrollTo("services")}
-                  className="text-gray-400 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
+                  className="text-gray-300 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
                 >
-                  Dịch vụ
+                  {t.nav_services}
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => smoothScrollTo("portfolio")}
-                  className="text-gray-400 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
+                  className="text-gray-300 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
                 >
-                  Sản phẩm
+                  {t.nav_portfolio}
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => smoothScrollTo("about")}
-                  className="text-gray-400 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
+                  className="text-gray-300 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
                 >
-                  Về chúng tôi
+                  {t.nav_about}
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => smoothScrollTo("contact")}
-                  className="text-gray-400 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
+                  className="text-gray-300 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
                 >
-                  Liên hệ
+                  {t.nav_contact}
                 </button>
               </li>
             </ul>
@@ -121,8 +118,8 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="font-bold text-lg">Thông tin liên hệ</h4>
-            <div className="space-y-3 text-sm text-gray-400">
+            <h4 className="font-bold text-lg">{t.footer_contact_info}</h4>
+            <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
                 <span>0966.616.636</span>
@@ -133,14 +130,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>
-                  Xóm 6, Thôn Lục Nam, Xã Thái Xuyên, Huyện Thái Thụy, Tỉnh Thái
-                  Bình
-                </span>
+                <span>{t.footer_address}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4" />
-                <span>7:30 - 17:30 (T2-T7)</span>
+                <span>{t.footer_working_hours}</span>
               </div>
             </div>
 
@@ -149,12 +143,12 @@ export default function Footer() {
             <div className="bg-blue-600 rounded-lg p-4">
               <h5 className="font-bold mb-2 flex items-center">
                 <Star className="w-4 h-4 mr-2" />
-                Ưu đãi đặc biệt
+                {t.footer_special_offer}
               </h5>
               <div className="text-sm">
-                Giảm 10% cho khách hàng mới
+                {t.footer_discount}
                 <Badge variant="secondary" className="ml-2">
-                  HOT
+                  {t.footer_hot}
                 </Badge>
               </div>
             </div>
@@ -163,24 +157,22 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <Separator className="bg-gray-700 my-8" />
-        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center text-sm text-gray-400">
+        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center text-sm text-gray-300">
           <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-4">
             <span className="flex items-center justify-center md:justify-start">
               <Star className="w-4 h-4 mr-2 text-yellow-400" />
-              Chất lượng cao - Giá cả hợp lý
+              {t.footer_commitment}
             </span>
             <span className="flex items-center justify-center md:justify-start">
               <Clock className="w-4 h-4 mr-2 text-green-400" />
-              Giao hàng đúng hạn
+              {t.footer_delivery}
             </span>
             <span className="flex items-center justify-center md:justify-start">
               <Phone className="w-4 h-4 mr-2 text-blue-400" />
-              Tư vấn miễn phí 24/7
+              {t.footer_consultation}
             </span>
           </div>
-          <p className="text-center md:text-left">
-            &copy; 2025 BH Design & Media. Tất cả quyền được bảo lưu.
-          </p>
+          <p className="text-center md:text-left">{t.footer_copyright}</p>
         </div>
       </div>
     </footer>

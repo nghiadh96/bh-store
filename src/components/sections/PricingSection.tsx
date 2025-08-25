@@ -8,50 +8,51 @@ import {
   CardTitle,
 } from "../ui/card";
 import { CheckCircle, Star, Phone, MessageCircle } from "lucide-react";
+import { useTranslation } from "../../translations/index";
 // import { smoothScrollTo } from "../../utils/scroll";
 
-const pricingPlans = [
+const getPricingPlans = (t: any) => [
   {
-    title: "Thiết kế",
-    price: "Từ 500.000đ",
-    description: "Thiết kế banner, poster, standee",
+    title: t.pricing_plan_basic_title,
+    price: t.pricing_plan_basic_price,
+    description: t.pricing_plan_basic_desc,
     features: [
-      "Thiết kế banner khổ lớn",
-      "Poster sự kiện chuyên nghiệp",
-      "Standee đứng quảng cáo",
-      "Ấn phẩm truyền thông",
-      "Chỉnh sửa miễn phí",
-      "File vector chất lượng cao",
+      t.pricing_basic_feature1,
+      t.pricing_basic_feature2,
+      t.pricing_basic_feature3,
+      t.pricing_basic_feature4,
+      t.pricing_basic_feature5,
+      t.pricing_basic_feature6,
     ],
     popular: false,
     color: "blue",
   },
   {
-    title: "In ấn",
-    price: "Từ 50.000đ/m²",
-    description: "In phun khổ lớn, decal, photocopy",
+    title: t.pricing_plan_standard_title,
+    price: t.pricing_plan_standard_price,
+    description: t.pricing_plan_standard_desc,
     features: [
-      "In phun khổ lớn đến 3.2m",
-      "In decal dán kính",
-      "Photocopy số lượng lớn",
-      "Scan màu chất lượng cao",
-      "Mực in chính hãng",
-      "Độ bền màu cao",
+      t.pricing_standard_feature1,
+      t.pricing_standard_feature2,
+      t.pricing_standard_feature3,
+      t.pricing_standard_feature4,
+      t.pricing_standard_feature5,
+      t.pricing_standard_feature6,
     ],
     popular: true,
     color: "green",
   },
   {
-    title: "Thi công",
-    price: "Liên hệ báo giá",
-    description: "Thi công biển quảng cáo, CNC",
+    title: t.pricing_plan_premium_title,
+    price: t.pricing_plan_premium_price,
+    description: t.pricing_plan_premium_desc,
     features: [
-      "Biển quảng cáo ngoài trời",
-      "Chữ nổi Alu cao cấp",
-      "Hộp đèn quảng cáo",
-      "Gia công CNC chính xác",
-      "Lắp đặt tận nơi",
-      "Bảo hành 12 tháng",
+      t.pricing_premium_feature1,
+      t.pricing_premium_feature2,
+      t.pricing_premium_feature3,
+      t.pricing_premium_feature4,
+      t.pricing_premium_feature5,
+      t.pricing_premium_feature6,
     ],
     popular: false,
     color: "orange",
@@ -59,27 +60,34 @@ const pricingPlans = [
 ];
 
 export default function PricingSection() {
+  const t = useTranslation();
+
   return (
-    <section id="pricing" className="py-20 bg-white">
+    <section
+      id="pricing"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">
+          <Badge
+            variant="outline"
+            className="mb-4 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
+          >
             <Star className="w-4 h-4 mr-2" />
-            Bảng giá
+            {t.nav_pricing}
           </Badge>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Bảng giá dịch vụ
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t.pricing_title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Báo giá minh bạch, không phát sinh chi phí. Liên hệ để được tư vấn
-            và báo giá chi tiết cho dự án cụ thể của bạn.
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            {t.pricing_subtitle}
           </p>
         </div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {pricingPlans.map((plan, index) => (
+          {getPricingPlans(t).map((plan, index) => (
             <Card
               key={index}
               className={`relative ${
@@ -92,13 +100,13 @@ export default function PricingSection() {
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-green-500 text-white px-4 py-1">
                     <Star className="w-3 h-3 mr-1" />
-                    Phổ biến
+                    {t.pricing_popular}
                   </Badge>
                 </div>
               )}
 
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold text-gray-900">
+                <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
                   {plan.title}
                 </CardTitle>
                 <div className="mt-4">
@@ -106,7 +114,7 @@ export default function PricingSection() {
                     {plan.price}
                   </span>
                 </div>
-                <CardDescription className="text-gray-600 mt-2">
+                <CardDescription className="text-gray-700 dark:text-gray-200 mt-2">
                   {plan.description}
                 </CardDescription>
               </CardHeader>
@@ -116,7 +124,7 @@ export default function PricingSection() {
                   {plan.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="flex items-center text-sm text-gray-600"
+                      className="flex items-center text-sm text-gray-700 dark:text-gray-200"
                     >
                       <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
                       {feature}
@@ -126,7 +134,7 @@ export default function PricingSection() {
 
                 <div className="space-y-3">
                   <Button
-                    className={`w-full hover:scale-105 transform duration-200 ${
+                    className={`w-full hover:scale-105 transform duration-200 text-white font-medium shadow-sm ${
                       plan.popular
                         ? "bg-green-600 hover:bg-green-700"
                         : "bg-blue-600 hover:bg-blue-700"
@@ -134,17 +142,16 @@ export default function PricingSection() {
                     onClick={() => window.open("tel:0966616636")}
                   >
                     <Phone className="w-4 h-4 mr-2" />
-                    Gọi báo giá
+                    {t.pricing_call_quote}
                   </Button>
                   <Button
-                    variant="outline"
-                    className="w-full hover:scale-105 transform duration-200"
+                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-sm"
                     onClick={() =>
                       window.open("https://zalo.me/0966616636", "_blank")
                     }
                   >
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    Chat Zalo
+                    {t.contact_zalo}
                   </Button>
                 </div>
               </CardContent>
@@ -153,50 +160,59 @@ export default function PricingSection() {
         </div>
 
         {/* Additional Info */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-16">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 mb-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                💡 Lưu ý quan trọng
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                {t.pricing_notes_title}
               </h3>
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Giá trên chưa bao gồm thuế VAT</span>
+                  <span>{t.pricing_notes_vat}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Thi công phức tạp cần khảo sát và báo giá riêng</span>
+                  <span>{t.pricing_notes_complex}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Giảm giá cho đơn hàng số lượng lớn</span>
+                  <span>{t.pricing_notes_bulk}</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span>Thanh toán linh hoạt: tiền mặt, chuyển khoản</span>
+                  <span>{t.pricing_notes_payment}</span>
                 </li>
               </ul>
             </div>
-            <div className="bg-white rounded-lg p-6">
-              <h4 className="font-bold text-gray-900 mb-4">
-                🎯 Ưu đãi đặc biệt
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-4">
+                {t.pricing_offers_title}
               </h4>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Khách hàng mới</span>
-                  <Badge className="bg-green-100 text-green-700">
-                    Giảm 10%
+                  <span className="text-gray-600 dark:text-gray-300">
+                    {t.pricing_offers_new_customer}
+                  </span>
+                  <Badge className="bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200">
+                    {t.pricing_offers_discount_10}
                   </Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Đơn hàng trên 5 triệu</span>
-                  <Badge className="bg-blue-100 text-blue-800">Giảm 15%</Badge>
+                  <span className="text-gray-600 dark:text-gray-300">
+                    {t.pricing_offers_large_order}
+                  </span>
+                  <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                    {" "}
+                    {t.pricing_offers_discount_15}
+                  </Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Khách hàng thân thiết</span>
-                  <Badge className="bg-purple-100 text-purple-700">
-                    Giảm 20%
+                  <span className="text-gray-600 dark:text-gray-300">
+                    {t.pricing_offers_loyal_customer}
+                  </span>
+                  <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200">
+                    {t.pricing_offers_discount_20}
                   </Badge>
                 </div>
               </div>
@@ -206,31 +222,27 @@ export default function PricingSection() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Cần báo giá chi tiết?</h3>
-            <p className="text-blue-100 mb-6">
-              Hãy liên hệ ngay để được tư vấn và báo giá chính xác cho dự án của
-              bạn
-            </p>
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-2xl p-8 text-white shadow-xl">
+            <h3 className="text-2xl font-bold mb-4">{t.pricing_cta}</h3>
+            <p className="text-blue-50 mb-6">{t.pricing_cta_desc}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200"
+                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
                 onClick={() => window.open("tel:0966616636")}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Gọi ngay: 0966.616.636
+                {t.pricing_call}
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white text-blue-700 hover:bg-white hover:text-blue-700 hover:scale-105 transform duration-200"
+                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
                 onClick={() =>
                   window.open("https://zalo.me/0966616636", "_blank")
                 }
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Chat Zalo tư vấn
+                {t.pricing_zalo}
               </Button>
             </div>
           </div>

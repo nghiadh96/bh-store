@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { AppProvider } from "./contexts/AppContext";
 import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/HeroSection";
 import AboutSection from "./components/sections/AboutSection";
@@ -37,19 +38,21 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <PortfolioSection />
-        <PricingSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <FloatingButtons />
-    </div>
+    <AppProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+        <Header />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ServicesSection />
+          <PortfolioSection />
+          <PricingSection />
+          <ContactSection />
+        </main>
+        <Footer />
+        <FloatingButtons />
+      </div>
+    </AppProvider>
   );
 }
 

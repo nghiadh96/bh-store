@@ -1,7 +1,9 @@
 import { Phone, MessageCircle, Mail, ArrowUp } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useTranslation } from "../../translations/index";
 
 export default function FloatingButtons() {
+  const t = useTranslation();
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
   const [clickedButton, setClickedButton] = useState<string | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -43,7 +45,7 @@ export default function FloatingButtons() {
               ? "animate-bounce scale-90"
               : "hover:scale-110"
           }`}
-          title="Gọi điện thoại"
+          title={t.floating_call_phone}
         >
           <Phone
             className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 animate-wiggle ${
@@ -73,7 +75,7 @@ export default function FloatingButtons() {
         {/* Tooltip with animation - Hidden on mobile */}
         {hoveredButton === "phone" && (
           <div className="hidden md:block absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg animate-fadeIn">
-            Gọi điện thoại
+            {t.floating_call_phone}
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
           </div>
         )}
@@ -94,7 +96,7 @@ export default function FloatingButtons() {
               ? "animate-bounce scale-90"
               : "hover:scale-110"
           }`}
-          title="Chat Zalo"
+          title={t.floating_chat_zalo}
         >
           <MessageCircle
             className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 animate-wiggle ${
@@ -124,7 +126,7 @@ export default function FloatingButtons() {
         {/* Tooltip with animation - Hidden on mobile */}
         {hoveredButton === "zalo" && (
           <div className="hidden md:block absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg animate-fadeIn">
-            Chat Zalo
+            {t.floating_chat_zalo}
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
           </div>
         )}
@@ -145,7 +147,7 @@ export default function FloatingButtons() {
               ? "animate-bounce scale-90"
               : "hover:scale-110"
           }`}
-          title="Gửi email"
+          title={t.floating_send_email}
         >
           <Mail
             className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 animate-wiggle ${
@@ -175,7 +177,7 @@ export default function FloatingButtons() {
         {/* Tooltip with animation - Hidden on mobile */}
         {hoveredButton === "email" && (
           <div className="hidden md:block absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg animate-fadeIn">
-            Gửi email
+            {t.floating_send_email}
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
           </div>
         )}
@@ -197,7 +199,7 @@ export default function FloatingButtons() {
                 ? "animate-bounce scale-90"
                 : "hover:scale-110"
             }`}
-            title="Cuộn lên đầu trang"
+            title={t.floating_scroll_top}
           >
             <ArrowUp
               className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 ${
@@ -227,7 +229,7 @@ export default function FloatingButtons() {
           {/* Tooltip with animation - Hidden on mobile */}
           {hoveredButton === "scroll" && (
             <div className="hidden md:block absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg animate-fadeIn">
-              Cuộn lên đầu trang
+              {t.floating_scroll_top}
               <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
             </div>
           )}

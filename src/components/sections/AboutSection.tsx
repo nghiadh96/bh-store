@@ -2,10 +2,16 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { CheckCircle, Award, Users, Clock } from "lucide-react";
 import { smoothScrollTo } from "../../utils/scroll";
+import { useTranslation } from "../../translations/index";
 
 export default function AboutSection() {
+  const t = useTranslation();
+
   return (
-    <section id="about" className="py-20 bg-white">
+    <section
+      id="about"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -17,28 +23,18 @@ export default function AboutSection() {
           >
             <Badge
               variant="outline"
-              className="bg-blue-100 text-blue-800 border-blue-400"
+              className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
             >
               <Award className="w-4 h-4 mr-2" />
-              Về chúng tôi
+              {t.about_title}
             </Badge>
 
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-              BH Design & Media - Chuyên gia thiết kế & in ấn quảng cáo tại Thái
-              Thụy, Thái Bình
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
+              {t.about_subtitle}
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Với hơn 5 năm kinh nghiệm trong lĩnh vực thiết kế và in ấn quảng
-              cáo, BH Design & Media tự hào là đối tác tin cậy của hàng trăm
-              doanh nghiệp tại Thái Thụy, Thái Bình. Chúng tôi cam kết mang đến
-              những sản phẩm chất lượng cao với giá cả hợp lý.
-            </p>
-
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Đội ngũ thiết kế chuyên nghiệp, máy móc hiện đại, và dịch vụ tận
-              tâm là những yếu tố tạo nên sự khác biệt của BH Design & Media
-              trong thị trường cạnh tranh.
+            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+              {t.about_description}
             </p>
 
             {/* Features */}
@@ -50,23 +46,27 @@ export default function AboutSection() {
             >
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">
-                  Thiết kế sáng tạo, độc đáo
+                <span className="text-gray-800 dark:text-gray-200 font-medium">
+                  {t.about_features_creative}
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">
-                  Máy in công nghiệp hiện đại
+                <span className="text-gray-800 dark:text-gray-200 font-medium">
+                  {t.about_features_quality}
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Giao hàng đúng hạn</span>
+                <span className="text-gray-800 dark:text-gray-200 font-medium">
+                  {t.about_features_fast}
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">Bảo hành 12 tháng</span>
+                <span className="text-gray-800 dark:text-gray-200 font-medium">
+                  {t.about_features_support}
+                </span>
               </div>
             </div>
 
@@ -77,19 +77,19 @@ export default function AboutSection() {
               data-aos-once="true"
             >
               <Button
-                className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transform duration-200"
+                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 hover:scale-105 transform duration-200 text-white font-medium shadow-lg hover:shadow-xl"
                 onClick={() => smoothScrollTo("portfolio")}
               >
                 <Users className="w-4 h-4 mr-2" />
-                Xem portfolio
+                {t.hero_cta_secondary}
               </Button>
               <Button
                 variant="outline"
-                className="hover:scale-105 transform duration-200"
-                onClick={() => smoothScrollTo("portfolio")}
+                className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:scale-105 transform duration-200 font-medium shadow-sm hover:shadow-md"
+                onClick={() => smoothScrollTo("contact")}
               >
                 <Clock className="w-4 h-4 mr-2" />
-                Lịch sử dự án
+                {t.nav_contact}
               </Button>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function AboutSection() {
             data-aos-delay="400"
             data-aos-once="true"
           >
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-lg">
               <div className="aspect-video rounded-lg overflow-hidden relative">
                 <img
                   src="/images/about-shop.webp"
@@ -113,10 +113,8 @@ export default function AboutSection() {
                     <h3 className="text-xl font-bold mb-2">
                       BH Design & Media
                     </h3>
-                    <p className="text-white">Thiết kế & In ấn Quảng cáo</p>
-                    <p className="text-sm text-gray-200 mt-2">
-                      Thái Thụy, Thái Bình
-                    </p>
+                    <p className="text-white">{t.header_tagline}</p>
+                    <p className="text-sm text-gray-200 mt-2">{t.hero_badge}</p>
                   </div>
                 </div>
               </div>
@@ -128,17 +126,29 @@ export default function AboutSection() {
                 data-aos-delay="700"
                 data-aos-once="true"
               >
-                <div className="text-center bg-white rounded-lg p-3">
-                  <p className="text-2xl font-bold text-blue-700">500+</p>
-                  <p className="text-xs text-gray-600">Dự án</p>
+                <div className="text-center bg-white dark:bg-gray-800 rounded-lg p-3 shadow-md">
+                  <p className="text-2xl font-bold text-blue-700 dark:text-blue-400">
+                    500+
+                  </p>
+                  <p className="text-xs text-gray-700 dark:text-gray-200 font-medium">
+                    {t.hero_stats_projects}
+                  </p>
                 </div>
-                <div className="text-center bg-white rounded-lg p-3">
-                  <p className="text-2xl font-bold text-green-600">98%</p>
-                  <p className="text-xs text-gray-600">Hài lòng</p>
+                <div className="text-center bg-white dark:bg-gray-800 rounded-lg p-3 shadow-md">
+                  <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+                    98%
+                  </p>
+                  <p className="text-xs text-gray-700 dark:text-gray-200 font-medium">
+                    {t.hero_stats_satisfaction}
+                  </p>
                 </div>
-                <div className="text-center bg-white rounded-lg p-3">
-                  <p className="text-2xl font-bold text-orange-600">5+</p>
-                  <p className="text-xs text-gray-600">Năm KN</p>
+                <div className="text-center bg-white dark:bg-gray-800 rounded-lg p-3 shadow-md">
+                  <p className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                    5+
+                  </p>
+                  <p className="text-xs text-gray-700 dark:text-gray-200 font-medium">
+                    {t.hero_stats_experience}
+                  </p>
                 </div>
               </div>
             </div>

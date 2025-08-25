@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { useTranslation } from "../../translations/index";
 import {
   Dialog,
   DialogContent,
@@ -24,6 +25,7 @@ import {
 } from "lucide-react";
 
 export default function ContactSection() {
+  const t = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [formData, setFormData] = useState({
@@ -45,10 +47,10 @@ export default function ContactSection() {
   // Mapping service values to display names
   const getServiceDisplayName = (serviceValue: string) => {
     const serviceMap: { [key: string]: string } = {
-      "thiet-ke": "Thiết kế (Banner, Poster, Standee)",
-      "in-an": "In ấn (Phun khổ lớn, Decal, Photocopy)",
-      "thi-cong": "Thi công (Biển quảng cáo, CNC)",
-      "tu-van": "Tư vấn tổng thể",
+      "thiet-ke": t.contact_service_design,
+      "in-an": t.contact_service_printing,
+      "thi-cong": t.contact_service_construction,
+      "tu-van": t.contact_service_consultation,
     };
     return serviceMap[serviceValue] || serviceValue;
   };
@@ -229,37 +231,37 @@ export default function ContactSection() {
     switch (name) {
       case "name":
         if (!value.trim()) {
-          error = "Họ và tên là bắt buộc";
+          error = t.form_error_name_required;
         } else if (!validateName(value)) {
-          error = "Họ và tên phải có 2-50 ký tự, chỉ chứa chữ cái và dấu cách";
+          error = t.form_error_name_invalid;
         }
         break;
 
       case "phone":
         if (!value.trim()) {
-          error = "Số điện thoại là bắt buộc";
+          error = t.form_error_phone_required;
         } else if (!validatePhone(value)) {
-          error = "Số điện thoại không hợp lệ (VD: 0123.456.789)";
+          error = t.form_error_phone_invalid;
         }
         break;
 
       case "email":
         if (value.trim() && !validateEmail(value)) {
-          error = "Email không hợp lệ";
+          error = t.form_error_email_invalid;
         }
         break;
 
       case "service":
         if (!value) {
-          error = "Vui lòng chọn dịch vụ quan tâm";
+          error = t.form_error_service_required;
         }
         break;
 
       case "message":
         if (!value.trim()) {
-          error = "Nội dung tin nhắn là bắt buộc";
+          error = t.form_error_message_required;
         } else if (value.trim().length < 10) {
-          error = "Nội dung tin nhắn phải có ít nhất 10 ký tự";
+          error = t.form_error_message_min_length;
         }
         break;
     }
@@ -271,20 +273,25 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section
+      id="contact"
+      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">
+          <Badge
+            variant="outline"
+            className="mb-4 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
+          >
             <MessageCircle className="w-4 h-4 mr-2" />
-            Liên hệ
+            {t.nav_contact}
           </Badge>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Liên hệ với chúng tôi
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t.contact_title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hãy liên hệ ngay để được tư vấn miễn phí và báo giá chi tiết cho dự
-            án của bạn. Chúng tôi luôn sẵn sàng hỗ trợ 24/7.
+          <p className="text-xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+            {t.contact_subtitle}
           </p>
         </div>
 
@@ -294,8 +301,8 @@ export default function ContactSection() {
             {/* Contact Info */}
             <Card className="shadow-lg">
               <CardHeader className="pb-3">
-                <CardTitle className="text-lg font-bold text-gray-900">
-                  Thông tin liên hệ
+                <CardTitle className="text-lg font-bold text-gray-900 dark:text-white">
+                  {t.contact_title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-0 space-y-2">
@@ -304,8 +311,12 @@ export default function ContactSection() {
                     <Phone className="w-3.5 h-3.5 text-blue-700" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">Hotline</p>
-                    <p className="text-gray-600 text-sm">0966.616.636</p>
+                    <p className="font-medium text-gray-900 dark:text-white text-sm">
+                      {t.contact_hotline}
+                    </p>
+                    <p className="text-gray-700 dark:text-gray-200 text-sm">
+                      0966.616.636
+                    </p>
                   </div>
                 </div>
 
@@ -314,8 +325,10 @@ export default function ContactSection() {
                     <MessageCircle className="w-3.5 h-3.5 text-green-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">Zalo</p>
-                    <p className="text-gray-600 text-sm">
+                    <p className="font-medium text-gray-900 dark:text-white text-sm">
+                      {t.contact_info_zalo}
+                    </p>
+                    <p className="text-gray-700 dark:text-gray-200 text-sm">
                       https://zalo.me/0966616636
                     </p>
                   </div>
@@ -326,8 +339,10 @@ export default function ContactSection() {
                     <Mail className="w-3.5 h-3.5 text-purple-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">Email</p>
-                    <p className="text-gray-600 text-sm">
+                    <p className="font-medium text-gray-900 dark:text-white text-sm">
+                      {t.contact_email}
+                    </p>
+                    <p className="text-gray-700 dark:text-gray-200 text-sm">
                       bhdesignmedia@gmail.com
                     </p>
                   </div>
@@ -338,10 +353,10 @@ export default function ContactSection() {
                     <Facebook className="w-3.5 h-3.5 text-blue-700" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">
-                      Facebook
+                    <p className="font-medium text-gray-900 dark:text-white text-sm">
+                      {t.contact_facebook}
                     </p>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-700 dark:text-gray-200 text-sm">
                       https://www.facebook.com/tuanbaodtb
                     </p>
                   </div>
@@ -352,10 +367,11 @@ export default function ContactSection() {
                     <MapPin className="w-3.5 h-3.5 text-orange-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">Địa chỉ</p>
-                    <p className="text-gray-600 text-sm">
-                      Xóm 6, Thôn Lục Nam, Xã Thái Xuyên, Huyện Thái Thụy, Tỉnh
-                      Thái Bình
+                    <p className="font-medium text-gray-900 dark:text-white text-sm">
+                      {t.contact_address}
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      {t.contact_address_detail}
                     </p>
                   </div>
                 </div>
@@ -365,11 +381,11 @@ export default function ContactSection() {
                     <Clock className="w-3.5 h-3.5 text-red-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">
-                      Giờ làm việc
+                    <p className="font-medium text-gray-900 dark:text-white text-sm">
+                      {t.contact_working_hours}
                     </p>
-                    <p className="text-gray-600 text-sm">
-                      7:30 - 17:30 (Thứ 2 - Thứ 7)
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      {t.contact_working_hours_detail}
                     </p>
                   </div>
                 </div>
@@ -378,11 +394,11 @@ export default function ContactSection() {
             {/* Contact Form */}
             <Card className="shadow-xl">
               <CardHeader className="pb-3">
-                <CardTitle className="text-xl font-bold text-gray-900">
-                  Gửi tin nhắn cho chúng tôi
+                <CardTitle className="text-xl font-bold text-gray-900 dark:text-white">
+                  {t.contact_form_title}
                 </CardTitle>
-                <p className="text-gray-600 text-sm">
-                  Điền thông tin bên dưới để được tư vấn miễn phí
+                <p className="text-gray-700 dark:text-gray-200 text-sm">
+                  {t.contact_form_subtitle}
                 </p>
               </CardHeader>
               <CardContent className="pt-0">
@@ -390,9 +406,10 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                     >
-                      Họ và tên <span className="text-red-500">*</span>
+                      {t.contact_form_name}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <Input
                       id="name"
@@ -402,7 +419,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
-                      placeholder="Nhập họ và tên"
+                      placeholder={t.form_placeholder_name}
                       className={`w-full ${
                         errors.name ? "border-red-500 focus:ring-red-500" : ""
                       }`}
@@ -415,9 +432,10 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                     >
-                      Số điện thoại <span className="text-red-500">*</span>
+                      {t.contact_form_phone}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <Input
                       id="phone"
@@ -427,7 +445,7 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
-                      placeholder="0966.616.636"
+                      placeholder={t.form_placeholder_phone}
                       className={`w-full ${
                         errors.phone ? "border-red-500 focus:ring-red-500" : ""
                       }`}
@@ -442,9 +460,9 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                     >
-                      Email
+                      {t.contact_form_email}
                     </label>
                     <Input
                       id="email"
@@ -453,7 +471,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
-                      placeholder="example@email.com"
+                      placeholder={t.form_placeholder_email}
                       className={`w-full ${
                         errors.email ? "border-red-500 focus:ring-red-500" : ""
                       }`}
@@ -468,9 +486,10 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="service"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                     >
-                      Dịch vụ quan tâm <span className="text-red-500">*</span>
+                      {t.contact_form_service}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="service"
@@ -479,13 +498,13 @@ export default function ContactSection() {
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
-                      className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-transparent ${
+                      className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-transparent dark:bg-gray-800 dark:text-white ${
                         errors.service
                           ? "border-red-500 focus:ring-red-500"
-                          : "border-gray-300 focus:ring-blue-500"
+                          : "border-gray-300 focus:ring-blue-500 dark:border-gray-600"
                       }`}
                     >
-                      <option value="">Chọn dịch vụ</option>
+                      <option value="">{t.form_placeholder_service}</option>
                       <option value="thiet-ke">
                         Thiết kế (Banner, Poster, Standee)
                       </option>
@@ -507,9 +526,10 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                     >
-                      Nội dung tin nhắn <span className="text-red-500">*</span>
+                      {t.contact_form_message}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <Textarea
                       id="message"
@@ -518,7 +538,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
-                      placeholder="Mô tả chi tiết yêu cầu của bạn (ví dụ: Thiết kế banner 3x6m cho sự kiện, In 100 trang A4...)"
+                      placeholder={t.form_placeholder_message}
                       rows={3}
                       className={`w-full ${
                         errors.message
@@ -536,14 +556,14 @@ export default function ContactSection() {
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-medium shadow-lg hover:shadow-xl"
                   >
                     {isLoading ? (
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                     ) : (
                       <Send className="w-4 h-4 mr-2" />
                     )}
-                    {isLoading ? "Đang gửi..." : "Gửi tin nhắn"}
+                    {isLoading ? t.contact_form_sending : t.contact_form_send}
                   </Button>
                 </form>
               </CardContent>
@@ -555,11 +575,11 @@ export default function ContactSection() {
             {/* Google Maps */}
             <Card className="shadow-lg">
               <CardHeader className="pb-2">
-                <CardTitle className="text-base font-bold text-gray-900">
-                  Vị trí của chúng tôi
+                <CardTitle className="text-base font-bold text-gray-900 dark:text-white">
+                  {t.contact_map_title}
                 </CardTitle>
-                <p className="text-gray-600 text-xs">
-                  BH Design & Media - Thái Bình
+                <p className="text-gray-700 dark:text-gray-200 text-xs">
+                  {t.contact_map_subtitle}
                 </p>
               </CardHeader>
               <CardContent className="pt-0">
@@ -582,33 +602,34 @@ export default function ContactSection() {
             {/* Quick Contact */}
             <Card className="shadow-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
               <CardContent className="p-6 min-h-[200px] flex flex-col justify-center">
-                <h3 className="text-lg font-bold mb-4">🚀 Liên hệ nhanh</h3>
-                <p className="text-blue-100 text-sm mb-6">
-                  Liên hệ ngay để được tư vấn miễn phí
+                <h3 className="text-lg font-bold mb-4">
+                  🚀 {t.contact_quick_title}
+                </h3>
+                <p className="text-blue-50 text-sm mb-6">
+                  {t.contact_quick_subtitle}
                 </p>
                 <div className="space-y-3">
                   <Button
-                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3"
+                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3 font-medium shadow-lg hover:shadow-xl"
                     onClick={() => window.open("tel:0966616636")}
                   >
                     <Phone className="w-4 h-4 mr-2" />
-                    Gọi ngay: 0966.616.636
+                    {t.contact_call}
                   </Button>
                   <Button
-                    variant="outline"
-                    className="w-full border-white text-blue-700 hover:bg-white hover:text-blue-700 hover:scale-105 transform duration-200 py-3"
+                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3 font-medium shadow-lg hover:shadow-xl"
                     onClick={() =>
                       window.open("https://zalo.me/0966616636", "_blank")
                     }
                   >
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    Chat Zalo tư vấn
+                    {t.contact_zalo}
                   </Button>
 
                   <div className="mt-6 pt-4 border-t border-blue-400">
                     <div className="text-center">
-                      <p className="text-blue-100 text-xs mb-2">
-                        Hoặc gửi email
+                      <p className="text-blue-50 text-xs mb-2">
+                        {t.contact_or_email}
                       </p>
                       <p className="text-white text-sm font-medium">
                         bhdesignmedia@gmail.com
@@ -629,17 +650,18 @@ export default function ContactSection() {
             <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mx-auto mb-4">
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
-            <DialogTitle className="text-center text-xl font-bold text-gray-900">
-              Cảm ơn bạn!
+            <DialogTitle className="text-center text-xl font-bold text-gray-900 dark:text-white">
+              {t.success}
             </DialogTitle>
-            <DialogDescription className="text-center text-gray-600">
-              Tin nhắn của bạn đã được gửi thành công.
+            <DialogDescription className="text-center text-gray-600 dark:text-gray-300">
+              {t.contact_success_message}
               <br />
               <span className="font-medium">
-                Dịch vụ: {getServiceDisplayName(formData.service)}
+                {t.contact_success_service}:{" "}
+                {getServiceDisplayName(formData.service)}
               </span>
               <br />
-              Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất!
+              {t.contact_success_response}
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-center mt-6">
@@ -647,7 +669,7 @@ export default function ContactSection() {
               onClick={() => setShowSuccessDialog(false)}
               className="bg-blue-600 hover:bg-blue-700"
             >
-              Đóng
+              {t.close}
             </Button>
           </div>
         </DialogContent>
