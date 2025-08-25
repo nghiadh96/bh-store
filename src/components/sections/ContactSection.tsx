@@ -150,26 +150,23 @@ export default function ContactSection() {
       // 2. Tạo form mới và lấy form ID
       // 3. Hoặc sử dụng email endpoint: https://formspree.io/f/your-email@domain.com
       // 4. Thay thế endpoint bên dưới:
-      const response = await fetch(
-        "https://formspree.io/f/bhdesignmedia@gmail.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-            service: getServiceDisplayName(formData.service),
-            serviceValue: formData.service,
-            message: formData.message,
-            _subject: `Liên hệ từ ${formData.name} - ${getServiceDisplayName(
-              formData.service
-            )} - BH Design & Media`,
-          }),
-        }
-      );
+      const response = await fetch("https://formspree.io/f/xanbrqrr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          service: getServiceDisplayName(formData.service),
+          serviceValue: formData.service,
+          message: formData.message,
+          _subject: `Liên hệ từ ${formData.name} - ${getServiceDisplayName(
+            formData.service
+          )} - BH Design & Media`,
+        }),
+      });
 
       console.log("Formspree response:", response.status, response.statusText);
 
