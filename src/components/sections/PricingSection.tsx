@@ -145,7 +145,7 @@ export default function PricingSection() {
                     {t.pricing_call_quote}
                   </Button>
                   <Button
-                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-sm"
+                    className="w-full bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30 hover:scale-105 transform duration-200 font-medium shadow-sm border border-blue-200 dark:border-blue-700"
                     onClick={() =>
                       window.open("https://zalo.me/0966616636", "_blank")
                     }
@@ -236,7 +236,7 @@ export default function PricingSection() {
               </Button>
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
+                className="bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl border border-blue-200 dark:border-blue-700"
                 onClick={() =>
                   window.open("https://zalo.me/0966616636", "_blank")
                 }
