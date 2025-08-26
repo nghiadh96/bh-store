@@ -63,7 +63,7 @@ export default function ContactSection() {
 
   const validatePhone = (phone: string) => {
     // Vietnamese phone number patterns - more strict
-    const cleanPhone = phone.replace(/[\s\.\-]/g, ""); // Remove spaces, dots, dashes
+    const cleanPhone = phone.replace(/[\s.-]/g, ""); // Remove spaces, dots, dashes
 
     // Must be exactly 10 digits starting with 0, or 12 digits starting with +84
     const phoneRegex =
@@ -170,8 +170,6 @@ export default function ContactSection() {
         }),
       });
 
-      console.log("Formspree response:", response.status, response.statusText);
-
       if (response.ok) {
         setShowSuccessDialog(true);
         setFormData({
@@ -182,14 +180,11 @@ export default function ContactSection() {
           message: "",
         });
       } else {
-        const errorText = await response.text();
-        console.error("Formspree error:", errorText);
         alert(
           `Có lỗi xảy ra (${response.status}). Vui lòng thử lại hoặc liên hệ trực tiếp qua điện thoại!`
         );
       }
-    } catch (error) {
-      console.error("Network error:", error);
+    } catch {
       alert(
         "Không thể kết nối. Vui lòng thử lại hoặc liên hệ trực tiếp qua điện thoại: 0123.456.789"
       );
@@ -204,14 +199,14 @@ export default function ContactSection() {
     >
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value,
     }));
 
     // Clear error when user starts typing
     if (errors[name as keyof typeof errors]) {
-      setErrors((prev) => ({
+      setErrors(prev => ({
         ...prev,
         [name]: "",
       }));
@@ -266,7 +261,7 @@ export default function ContactSection() {
         break;
     }
 
-    setErrors((prev) => ({
+    setErrors(prev => ({
       ...prev,
       [name]: error,
     }));

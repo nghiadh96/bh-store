@@ -24,7 +24,20 @@ import {
 import { useTranslation } from "../../translations/index";
 // import { smoothScrollTo } from "../../utils/scroll";
 
-const getServices = (t: any) => [
+interface Service {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+  color: string;
+}
+
+interface ServiceCategory {
+  title: string;
+  items: string[];
+}
+
+const getServices = (t: ReturnType<typeof useTranslation>): Service[] => [
   {
     icon: <Palette className="w-8 h-8" />,
     title: t.service_design_title,
@@ -75,7 +88,9 @@ const getServices = (t: any) => [
   },
 ];
 
-const getServiceCategories = (t: any) => [
+const getServiceCategories = (
+  t: ReturnType<typeof useTranslation>
+): ServiceCategory[] => [
   {
     title: t.service_category_signs_title,
     items: [
@@ -152,10 +167,10 @@ export default function ServicesSection() {
                   index === 0
                     ? "#3B82F6"
                     : index === 1
-                    ? "#10B981"
-                    : index === 2
-                    ? "#F59E0B"
-                    : "#8B5CF6",
+                      ? "#10B981"
+                      : index === 2
+                        ? "#F59E0B"
+                        : "#8B5CF6",
               }}
             >
               <CardHeader className="text-center pb-4">
@@ -195,36 +210,38 @@ export default function ServicesSection() {
             {t.service_category_title}
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-            {getServiceCategories(t).map((category: any, index: number) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md border-t-4"
-                style={{
-                  borderTopColor:
-                    index === 0
-                      ? "#3B82F6"
-                      : index === 1
-                      ? "#10B981"
-                      : "#F59E0B",
-                }}
-              >
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                  <Star className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2" />
-                  {category.title}
-                </h4>
-                <ul className="space-y-2">
-                  {category.items.map((item: string, itemIndex: number) => (
-                    <li
-                      key={itemIndex}
-                      className="flex items-center text-sm text-gray-700 dark:text-gray-200"
-                    >
-                      <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {getServiceCategories(t).map(
+              (category: ServiceCategory, index: number) => (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md border-t-4"
+                  style={{
+                    borderTopColor:
+                      index === 0
+                        ? "#3B82F6"
+                        : index === 1
+                          ? "#10B981"
+                          : "#F59E0B",
+                  }}
+                >
+                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                    <Star className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2" />
+                    {category.title}
+                  </h4>
+                  <ul className="space-y-2">
+                    {category.items.map((item: string, itemIndex: number) => (
+                      <li
+                        key={itemIndex}
+                        className="flex items-center text-sm text-gray-700 dark:text-gray-200"
+                      >
+                        <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            )}
           </div>
         </div>
 

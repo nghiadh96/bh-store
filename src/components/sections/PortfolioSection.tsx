@@ -6,7 +6,17 @@ import { smoothScrollTo } from "../../utils/scroll";
 import { useState } from "react";
 import { useTranslation } from "../../translations/index";
 
-const getPortfolioItems = (t: any) => [
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+}
+
+const getPortfolioItems = (
+  t: ReturnType<typeof useTranslation>
+): PortfolioItem[] => [
   {
     id: 1,
     title: t.portfolio_item1_title,
@@ -67,18 +77,20 @@ const getPortfolioItems = (t: any) => [
 
 export default function PortfolioSection() {
   const t = useTranslation();
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [selectedProduct, setSelectedProduct] = useState<PortfolioItem | null>(
+    null
+  );
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
 
   // Hàm xử lý xem chi tiết sản phẩm
-  const handleViewProduct = (item: any) => {
+  const handleViewProduct = (item: PortfolioItem) => {
     setSelectedProduct(item);
     setIsViewModalOpen(true);
   };
 
   // Hàm xử lý tải xuống sản phẩm
-  const handleDownloadProduct = (item: any) => {
+  const handleDownloadProduct = (item: PortfolioItem) => {
     setSelectedProduct(item);
     setIsDownloadModalOpen(true);
   };
@@ -108,7 +120,7 @@ export default function PortfolioSection() {
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {getPortfolioItems(t).map((item: any, index: number) => (
+          {getPortfolioItems(t).map((item: PortfolioItem, index: number) => (
             <div
               key={item.id}
               className="group bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"

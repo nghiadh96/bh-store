@@ -11,7 +11,7 @@ import { CheckCircle, Star, Phone, MessageCircle } from "lucide-react";
 import { useTranslation } from "../../translations/index";
 // import { smoothScrollTo } from "../../utils/scroll";
 
-const getPricingPlans = (t: any) => [
+const getPricingPlans = (t: ReturnType<typeof useTranslation>) => [
   {
     title: t.pricing_plan_basic_title,
     price: t.pricing_plan_basic_price,
@@ -43,7 +43,7 @@ const getPricingPlans = (t: any) => [
     color: "green",
   },
   {
-    title: t.pricing_plan_premium_title,
+    title: t.pricing_premium_title,
     price: t.pricing_plan_premium_price,
     description: t.pricing_plan_premium_desc,
     features: [

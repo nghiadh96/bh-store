@@ -57,7 +57,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [activeSection]);
 
   // Xử lý khi URL thay đổi (back/forward button hoặc nhập URL trực tiếp)
   // useEffect(() => {

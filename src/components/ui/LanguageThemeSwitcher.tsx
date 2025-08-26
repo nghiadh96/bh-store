@@ -1,5 +1,5 @@
 import { Button } from "./button";
-import { useApp } from "../../contexts/AppContext";
+import { useApp } from "../../contexts/useApp";
 import { Sun, Moon, Globe } from "lucide-react";
 import { useState } from "react";
 

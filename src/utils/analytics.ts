@@ -1,7 +1,11 @@
 // Google Analytics Event Tracking
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
+    gtag: (
+      command: string,
+      action: string,
+      parameters?: Record<string, unknown>
+    ) => void;
   }
 }
 

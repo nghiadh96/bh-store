@@ -13,7 +13,17 @@ import FloatingButtons from "./components/ui/FloatingButtons";
 // Declare AOS as global
 declare global {
   interface Window {
-    AOS: any;
+    AOS: {
+      init: (options?: {
+        duration?: number;
+        easing?: string;
+        once?: boolean;
+        offset?: number;
+        disable?: boolean;
+        throttleDelay?: number;
+        debounceDelay?: number;
+      }) => void;
+    };
   }
 }
 

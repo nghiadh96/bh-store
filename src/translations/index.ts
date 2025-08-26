@@ -1,4 +1,4 @@
-import { useApp } from "../contexts/AppContext";
+import { useApp } from "../contexts/useApp";
 
 export const translations = {
   vi: {
