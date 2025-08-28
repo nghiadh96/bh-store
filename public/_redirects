@@ -1,1 +1,15 @@
+# Sitemap redirects
+/sitemap.xml /sitemap.xml 200
+/sitemap-index.xml /sitemap-index.xml 200
+/sitemap-images.xml /sitemap-images.xml 200
+
+# Force XML content-type for sitemaps
+/sitemap*.xml /sitemap.xml 200
+/sitemap-index.xml /sitemap-index.xml 200
+/sitemap-images.xml /sitemap-images.xml 200
+
+# Robots.txt
+/robots.txt /robots.txt 200
+
+# Handle client-side routing
 /*    /index.html   200

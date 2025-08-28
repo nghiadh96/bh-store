@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://bh-design-media.netlify.app/sitemap.xml
+# Sitemaps
+Sitemap: https://bh-design-media.netlify.app/sitemap-index.xml
 
 # Crawl-delay
 Crawl-delay: 1
@@ -10,3 +10,10 @@ Crawl-delay: 1
 # Disallow admin areas (if any)
 Disallow: /admin/
 Disallow: /private/
+
+# Allow images
+Allow: /images/
+Allow: /*.webp
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.ico
