@@ -13,12 +13,13 @@ export const translations = {
     header_hotline: "Hotline:",
     header_support: "Hỗ trợ bảo hành:",
     header_working_hours: "7:30 - 17:30 (T2-T7)",
-    header_tagline: "Thiết kế & In ấn Quảng cáo",
+    header_tagline: "Thiết kế & Truyền thông - In ấn Quảng cáo",
 
     // Hero Section
     hero_badge: "Đông Thái Ninh, Hưng Yên",
     hero_title: "BH Design & Media",
-    hero_subtitle: "Thiết kế & In ấn Quảng cáo Chuyên nghiệp",
+    hero_subtitle: "Thiết kế & Truyền thông - In ấn Quảng cáo",
+    hero_sologan: "Biến ý tưởng thành ấn tượng",
     hero_description:
       "Chuyên thiết kế banner, poster, standee, in phun khổ lớn, thi công biển quảng cáo tại Đông Thái Ninh, Hưng Yên",
     hero_cta_primary: "Tư vấn miễn phí",
@@ -30,7 +31,8 @@ export const translations = {
 
     // About Section
     about_title: "Về chúng tôi",
-    about_subtitle: "Đối tác tin cậy trong thiết kế & in ấn quảng cáo",
+    about_subtitle:
+      "Đối tác tin cậy trong thiết kế & truyền thông - in ấn quảng cáo",
     about_description:
       "BH Design & Media tự hào là đơn vị thiết kế và in ấn quảng cáo hàng đầu tại Đông Thái Ninh, Hưng Yên. Với kinh nghiệm nhiều năm trong lĩnh vực thiết kế đồ họa và in ấn, chúng tôi cam kết mang đến những sản phẩm chất lượng cao, sáng tạo và đáp ứng mọi nhu cầu của khách hàng.",
     about_features_quality: "Chất lượng cao",
@@ -97,9 +99,9 @@ export const translations = {
     service_category_printing_title: "Thiết kế in ấn",
     service_category_printing_item1: "In bạt",
     service_category_printing_item2: "In decal",
-    service_category_printing_item3: "In UV cuộn / phẳng",
-    service_category_printing_item4: "In ấn phẩm",
-
+    service_category_printing_item3: "In Photocopy,scan màu",
+    service_category_printing_item4: "In ấn phẩm truyền thông",
+    service_category_printing_item5: "In card visit, thiếp mời, phong bì",
     service_category_processing_title: "Gia Công",
     service_category_processing_item1: "Chữ nổi",
     service_category_processing_item2: "Biển công ty",
@@ -241,6 +243,7 @@ export const translations = {
     floating_call_phone: "Gọi điện",
     floating_chat_zalo: "Chat Zalo",
     floating_send_email: "Gửi email",
+    floating_facebook: "Facebook",
     floating_scroll_top: "Lên đầu trang",
 
     // Contact Section
@@ -273,9 +276,9 @@ export const translations = {
     contact_email: "Email",
     contact_facebook: "Facebook",
     contact_working_hours: "Giờ làm việc",
-    contact_working_hours_detail: "7:30 - 17:30 (Thứ 2 - Thứ 7)",
-    contact_address_detail:
-      "Xóm 6, Thôn Lục Nam, Xã Thái Xuyên, Huyện Đông Thái Ninh, Tỉnh Hưng Yên",
+    contact_working_hours_detail: "Sáng: 7:00 - 11:30",
+    contact_working_hours_detail_2: "Chiều: 13:30 - 17:30",
+    contact_address_detail: "Thôn Lục Nam, xã Đông Thái Ninh, Tỉnh Hưng Yên",
 
     // Footer
     footer_tagline: "Thiết kế & In ấn Quảng cáo",
@@ -341,12 +344,13 @@ export const translations = {
     header_hotline: "Hotline:",
     header_support: "Support:",
     header_working_hours: "7:30 - 17:30 (Mon-Sat)",
-    header_tagline: "Design & Advertising Printing",
+    header_tagline: "Design & Media - Advertising Printing",
 
     // Hero Section
     hero_badge: "Dong Thai Ninh, Hung Yen",
     hero_title: "BH Design & Media",
-    hero_subtitle: "Professional Design & Advertising Printing",
+    hero_subtitle: "Professional Design & Media - Advertising Printing",
+    hero_sologan: "Transform ideas into impactful visuals",
     hero_description:
       "Specializing in banner design, poster, standee, large format printing, advertising construction in Dong Thai Ninh, Hung Yen",
     hero_cta_primary: "Free Consultation",
@@ -425,8 +429,10 @@ export const translations = {
     service_category_printing_title: "Print design",
     service_category_printing_item1: "Tarpaulin printing",
     service_category_printing_item2: "Decal printing",
-    service_category_printing_item3: "UV roll/flatbed printing",
-    service_category_printing_item4: "Publication printing",
+    service_category_printing_item3: "Photocopy",
+    service_category_printing_item4: "Publication printing media",
+    service_category_printing_item5:
+      "Print business cards, invitations, envelopes",
 
     service_category_processing_title: "Processing",
     service_category_processing_item1: "Raised letters",
@@ -597,8 +603,9 @@ export const translations = {
     contact_facebook: "Facebook",
     contact_address: "Address",
     contact_working_hours: "Working Hours",
-    contact_working_hours_detail: "7:30 - 17:30 (Mon-Sat)",
-    contact_address_detail: "Thai Xuyen, Dong Thai Ninh, Hung Yen",
+    contact_working_hours_detail: "Morning: 7:00 - 11:30",
+    contact_working_hours_detail_2: "Afternoon: 13:30 - 17:30",
+    contact_address_detail: "Luc Nam, Dong Thai Ninh, Hung Yen",
 
     // Footer
     footer_tagline: "Design & Advertising Printing",
@@ -649,6 +656,7 @@ export const translations = {
     floating_call_phone: "Call Phone",
     floating_chat_zalo: "Chat Zalo",
     floating_send_email: "Send Email",
+    floating_facebook: "Facebook",
     floating_scroll_top: "Scroll to Top",
 
     // Common

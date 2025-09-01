@@ -72,7 +72,7 @@ export default function PricingSection() {
         <div className="text-center mb-16">
           <Badge
             variant="outline"
-            className="mb-4 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
+            className="mb-4 bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 border-orange-400 dark:border-orange-600 shadow-sm"
           >
             <Star className="w-4 h-4 mr-2" />
             {t.nav_pricing}
@@ -110,7 +110,7 @@ export default function PricingSection() {
                   {plan.title}
                 </CardTitle>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-blue-700">
+                  <span className="text-4xl font-bold text-orange-700">
                     {plan.price}
                   </span>
                 </div>
@@ -137,7 +137,7 @@ export default function PricingSection() {
                     className={`w-full hover:scale-105 transform duration-200 text-white font-medium shadow-sm ${
                       plan.popular
                         ? "bg-green-600 hover:bg-green-700"
-                        : "bg-blue-600 hover:bg-blue-700"
+                        : "bg-orange-600 hover:bg-orange-700"
                     }`}
                     onClick={() => window.open("tel:0966616636")}
                   >
@@ -145,7 +145,7 @@ export default function PricingSection() {
                     {t.pricing_call_quote}
                   </Button>
                   <Button
-                    className="w-full bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30 hover:scale-105 transform duration-200 font-medium shadow-sm border border-blue-200 dark:border-blue-700"
+                    className="w-full bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/20 dark:text-orange-300 dark:hover:bg-orange-900/30 hover:scale-105 transform duration-200 font-medium shadow-sm border border-orange-200 dark:border-orange-700"
                     onClick={() =>
                       window.open("https://zalo.me/0966616636", "_blank")
                     }
@@ -160,7 +160,7 @@ export default function PricingSection() {
         </div>
 
         {/* Additional Info */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 mb-16">
+        <div className="bg-gradient-to-r from-orange-50 to-indigo-50 dark:from-orange-900/20 dark:to-indigo-900/20 rounded-2xl p-8 mb-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
@@ -202,7 +202,7 @@ export default function PricingSection() {
                   <span className="text-gray-600 dark:text-gray-300">
                     {t.pricing_offers_large_order}
                   </span>
-                  <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                  <Badge className="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
                     {" "}
                     {t.pricing_offers_discount_15}
                   </Badge>
@@ -222,13 +222,13 @@ export default function PricingSection() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-2xl p-8 text-white shadow-xl">
+          <div className="bg-gradient-to-r from-orange-600 to-indigo-600 dark:from-orange-500 dark:to-indigo-500 rounded-2xl p-8 text-white shadow-xl">
             <h3 className="text-2xl font-bold mb-4">{t.pricing_cta}</h3>
-            <p className="text-blue-50 mb-6">{t.pricing_cta_desc}</p>
+            <p className="text-orange-50 mb-6">{t.pricing_cta_desc}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
+                className="bg-white text-orange-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
                 onClick={() => window.open("tel:0966616636")}
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -236,7 +236,7 @@ export default function PricingSection() {
               </Button>
               <Button
                 size="lg"
-                className="bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl border border-blue-200 dark:border-blue-700"
+                className="bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/20 dark:text-orange-300 dark:hover:bg-orange-900/30 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl border border-orange-200 dark:border-orange-700"
                 onClick={() =>
                   window.open("https://zalo.me/0966616636", "_blank")
                 }

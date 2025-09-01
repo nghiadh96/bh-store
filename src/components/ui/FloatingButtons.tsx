@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, Mail, ArrowUp } from "lucide-react";
+import { Phone, MessageCircle, Mail, Facebook, ArrowUp } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "../../translations/index";
 
@@ -40,7 +40,7 @@ export default function FloatingButtons() {
           }
           onMouseEnter={() => setHoveredButton("phone")}
           onMouseLeave={() => setHoveredButton(null)}
-          className={`relative w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
+          className={`relative w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
             clickedButton === "phone"
               ? "animate-bounce scale-90"
               : "hover:scale-110"
@@ -48,28 +48,28 @@ export default function FloatingButtons() {
           title={t.floating_call_phone}
         >
           <Phone
-            className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 animate-wiggle ${
+            className={`w-4 h-4 md:w-5 md:h-5 text-white transition-transform duration-300 animate-wiggle ${
               hoveredButton === "phone" ? "rotate-12 scale-110" : ""
             } ${clickedButton === "phone" ? "animate-shake" : ""}`}
           />
 
           {/* Multiple pulse effects */}
-          <div className="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-30"></div>
+          <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-30"></div>
           <div
-            className="absolute inset-0 bg-red-400 rounded-full animate-ping opacity-20"
+            className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-20"
             style={{ animationDelay: "0.5s" }}
           ></div>
           <div
-            className="absolute inset-0 bg-red-300 rounded-full animate-ping opacity-10"
+            className="absolute inset-0 bg-orange-300 rounded-full animate-ping opacity-10"
             style={{ animationDelay: "1s" }}
           ></div>
 
           {/* Hover ring with wave effect */}
-          <div className="absolute inset-0 bg-red-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
-          <div className="absolute inset-0 bg-red-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
+          <div className="absolute inset-0 bg-orange-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
 
           {/* Glow effect */}
-          <div className="absolute inset-0 bg-red-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
         </button>
 
         {/* Tooltip with animation - Hidden on mobile */}
@@ -91,7 +91,7 @@ export default function FloatingButtons() {
           }
           onMouseEnter={() => setHoveredButton("zalo")}
           onMouseLeave={() => setHoveredButton(null)}
-          className={`relative w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
+          className={`relative w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
             clickedButton === "zalo"
               ? "animate-bounce scale-90"
               : "hover:scale-110"
@@ -99,28 +99,28 @@ export default function FloatingButtons() {
           title={t.floating_chat_zalo}
         >
           <MessageCircle
-            className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 animate-wiggle ${
+            className={`w-4 h-4 md:w-5 md:h-5 text-white transition-transform duration-300 animate-wiggle ${
               hoveredButton === "zalo" ? "rotate-12 scale-110" : ""
             } ${clickedButton === "zalo" ? "animate-shake" : ""}`}
           />
 
           {/* Multiple pulse effects */}
-          <div className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-30"></div>
+          <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-30"></div>
           <div
-            className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"
+            className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-20"
             style={{ animationDelay: "0.5s" }}
           ></div>
           <div
-            className="absolute inset-0 bg-blue-300 rounded-full animate-ping opacity-10"
+            className="absolute inset-0 bg-orange-300 rounded-full animate-ping opacity-10"
             style={{ animationDelay: "1s" }}
           ></div>
 
           {/* Hover ring with wave effect */}
-          <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
-          <div className="absolute inset-0 bg-blue-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
+          <div className="absolute inset-0 bg-orange-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
 
           {/* Glow effect */}
-          <div className="absolute inset-0 bg-blue-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
         </button>
 
         {/* Tooltip with animation - Hidden on mobile */}
@@ -142,7 +142,7 @@ export default function FloatingButtons() {
           }
           onMouseEnter={() => setHoveredButton("email")}
           onMouseLeave={() => setHoveredButton(null)}
-          className={`relative w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
+          className={`relative w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
             clickedButton === "email"
               ? "animate-bounce scale-90"
               : "hover:scale-110"
@@ -150,34 +150,85 @@ export default function FloatingButtons() {
           title={t.floating_send_email}
         >
           <Mail
-            className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 animate-wiggle ${
+            className={`w-4 h-4 md:w-5 md:h-5 text-white transition-transform duration-300 animate-wiggle ${
               hoveredButton === "email" ? "rotate-12 scale-110" : ""
             } ${clickedButton === "email" ? "animate-shake" : ""}`}
           />
 
           {/* Multiple pulse effects */}
-          <div className="absolute inset-0 bg-blue-600 rounded-full animate-ping opacity-30"></div>
+          <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-30"></div>
           <div
-            className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-20"
+            className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-20"
             style={{ animationDelay: "0.5s" }}
           ></div>
           <div
-            className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-10"
+            className="absolute inset-0 bg-orange-300 rounded-full animate-ping opacity-10"
             style={{ animationDelay: "1s" }}
           ></div>
 
           {/* Hover ring with wave effect */}
-          <div className="absolute inset-0 bg-blue-500 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
-          <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
+          <div className="absolute inset-0 bg-orange-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
 
           {/* Glow effect */}
-          <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
         </button>
 
         {/* Tooltip with animation - Hidden on mobile */}
         {hoveredButton === "email" && (
           <div className="hidden md:block absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg animate-fadeIn">
             {t.floating_send_email}
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+          </div>
+        )}
+      </div>
+
+      {/* Facebook Button */}
+      <div className="relative group">
+        <button
+          onClick={() =>
+            handleButtonClick("facebook", () =>
+              window.open("https://m.me/bhdesignmedia", "_blank")
+            )
+          }
+          onMouseEnter={() => setHoveredButton("facebook")}
+          onMouseLeave={() => setHoveredButton(null)}
+          className={`relative w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
+            clickedButton === "facebook"
+              ? "animate-bounce scale-90"
+              : "hover:scale-110"
+          }`}
+          title={t.floating_facebook}
+        >
+          <Facebook
+            className={`w-4 h-4 md:w-5 md:h-5 text-white transition-transform duration-300 animate-wiggle ${
+              hoveredButton === "facebook" ? "rotate-12 scale-110" : ""
+            } ${clickedButton === "facebook" ? "animate-shake" : ""}`}
+          />
+
+          {/* Multiple pulse effects */}
+          <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-30"></div>
+          <div
+            className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-20"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="absolute inset-0 bg-orange-300 rounded-full animate-ping opacity-10"
+            style={{ animationDelay: "1s" }}
+          ></div>
+
+          {/* Hover ring with wave effect */}
+          <div className="absolute inset-0 bg-orange-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
+
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
+        </button>
+
+        {/* Tooltip with animation - Hidden on mobile */}
+        {hoveredButton === "facebook" && (
+          <div className="hidden md:block absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg animate-fadeIn">
+            {t.floating_facebook}
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
           </div>
         )}
@@ -194,7 +245,7 @@ export default function FloatingButtons() {
             }
             onMouseEnter={() => setHoveredButton("scroll")}
             onMouseLeave={() => setHoveredButton(null)}
-            className={`relative w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
+            className={`relative w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-full shadow-lg hover:shadow-2xl transform transition-all duration-300 flex items-center justify-center group ${
               clickedButton === "scroll"
                 ? "animate-bounce scale-90"
                 : "hover:scale-110"
@@ -202,28 +253,28 @@ export default function FloatingButtons() {
             title={t.floating_scroll_top}
           >
             <ArrowUp
-              className={`w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 ${
+              className={`w-4 h-4 md:w-5 md:h-5 text-white transition-transform duration-300 ${
                 hoveredButton === "scroll" ? "rotate-12 scale-110" : ""
               } ${clickedButton === "scroll" ? "animate-shake" : ""}`}
             />
 
             {/* Multiple pulse effects */}
-            <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-30"></div>
+            <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-30"></div>
             <div
-              className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-20"
+              className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-20"
               style={{ animationDelay: "0.5s" }}
             ></div>
             <div
-              className="absolute inset-0 bg-green-300 rounded-full animate-ping opacity-10"
+              className="absolute inset-0 bg-orange-300 rounded-full animate-ping opacity-10"
               style={{ animationDelay: "1s" }}
             ></div>
 
             {/* Hover ring with wave effect */}
-            <div className="absolute inset-0 bg-green-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
-            <div className="absolute inset-0 bg-green-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
+            <div className="absolute inset-0 bg-orange-400 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-110"></div>
+            <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500 scale-125"></div>
 
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-green-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
+            <div className="absolute inset-0 bg-orange-300 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 scale-125 blur-sm"></div>
           </button>
 
           {/* Tooltip with animation - Hidden on mobile */}

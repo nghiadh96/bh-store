@@ -45,7 +45,7 @@ export default function LanguageThemeSwitcher() {
                 setShowLanguageMenu(false);
               }}
               className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                language === "vi" ? "bg-blue-50 dark:bg-blue-900" : ""
+                language === "vi" ? "bg-orange-50 dark:bg-orange-900" : ""
               }`}
             >
               <span className="mr-2">🇻🇳</span>
@@ -57,7 +57,7 @@ export default function LanguageThemeSwitcher() {
                 setShowLanguageMenu(false);
               }}
               className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                language === "en" ? "bg-blue-50 dark:bg-blue-900" : ""
+                language === "en" ? "bg-orange-50 dark:bg-orange-900" : ""
               }`}
             >
               <span className="mr-2">🇺🇸</span>

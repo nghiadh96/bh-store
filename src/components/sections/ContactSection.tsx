@@ -21,7 +21,6 @@ import {
   Send,
   CheckCircle,
   Loader2,
-  Facebook,
 } from "lucide-react";
 
 export default function ContactSection() {
@@ -277,7 +276,7 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <Badge
             variant="outline"
-            className="mb-4 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
+            className="mb-4 bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 border-orange-400 dark:border-orange-600 shadow-sm"
           >
             <MessageCircle className="w-4 h-4 mr-2" />
             {t.nav_contact}
@@ -302,15 +301,15 @@ export default function ContactSection() {
               </CardHeader>
               <CardContent className="pt-0 space-y-2">
                 <div className="flex items-center space-x-3">
-                  <div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Phone className="w-3.5 h-3.5 text-blue-700" />
+                  <div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center">
+                    <Phone className="w-3.5 h-3.5 text-orange-700" />
                   </div>
                   <div>
                     <p className="font-medium text-gray-900 dark:text-white text-sm">
                       {t.contact_hotline}
                     </p>
                     <p className="text-gray-700 dark:text-gray-200 text-sm">
-                      0966.616.636
+                      0818.316.616 - 0966.616.636
                     </p>
                   </div>
                 </div>
@@ -344,20 +343,6 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Facebook className="w-3.5 h-3.5 text-blue-700" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-900 dark:text-white text-sm">
-                      {t.contact_facebook}
-                    </p>
-                    <p className="text-gray-700 dark:text-gray-200 text-sm">
-                      https://www.facebook.com/tuanbaodtb
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-3">
                   <div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center">
                     <MapPin className="w-3.5 h-3.5 text-orange-600" />
                   </div>
@@ -381,6 +366,9 @@ export default function ContactSection() {
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
                       {t.contact_working_hours_detail}
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      {t.contact_working_hours_detail_2}
                     </p>
                   </div>
                 </div>
@@ -496,7 +484,7 @@ export default function ContactSection() {
                       className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-transparent dark:bg-gray-800 dark:text-white ${
                         errors.service
                           ? "border-red-500 focus:ring-red-500"
-                          : "border-gray-300 focus:ring-blue-500 dark:border-gray-600"
+                          : "border-gray-300 focus:ring-orange-500 dark:border-gray-600"
                       }`}
                     >
                       <option value="">{t.form_placeholder_service}</option>
@@ -551,7 +539,7 @@ export default function ContactSection() {
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-medium shadow-lg hover:shadow-xl"
+                    className="w-full bg-orange-600 hover:bg-orange-700 disabled:opacity-50 text-white font-medium shadow-lg hover:shadow-xl"
                   >
                     {isLoading ? (
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -595,24 +583,24 @@ export default function ContactSection() {
             </Card>
 
             {/* Quick Contact */}
-            <Card className="shadow-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+            <Card className="shadow-lg bg-gradient-to-r from-orange-600 to-indigo-600 text-white">
               <CardContent className="p-6 min-h-[200px] flex flex-col justify-center">
                 <h3 className="text-lg font-bold mb-4">
                   🚀 {t.contact_quick_title}
                 </h3>
-                <p className="text-blue-50 text-sm mb-6">
+                <p className="text-orange-50 text-sm mb-6">
                   {t.contact_quick_subtitle}
                 </p>
                 <div className="space-y-3">
                   <Button
-                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3 font-medium shadow-lg hover:shadow-xl"
+                    className="w-full bg-white text-orange-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3 font-medium shadow-lg hover:shadow-xl"
                     onClick={() => window.open("tel:0966616636")}
                   >
                     <Phone className="w-4 h-4 mr-2" />
                     {t.contact_call}
                   </Button>
                   <Button
-                    className="w-full bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3 font-medium shadow-lg hover:shadow-xl"
+                    className="w-full bg-white text-orange-700 hover:bg-gray-100 hover:scale-105 transform duration-200 py-3 font-medium shadow-lg hover:shadow-xl"
                     onClick={() =>
                       window.open("https://zalo.me/0966616636", "_blank")
                     }
@@ -621,9 +609,9 @@ export default function ContactSection() {
                     {t.contact_zalo}
                   </Button>
 
-                  <div className="mt-6 pt-4 border-t border-blue-400">
+                  <div className="mt-6 pt-4 border-t border-orange-400">
                     <div className="text-center">
-                      <p className="text-blue-50 text-xs mb-2">
+                      <p className="text-orange-50 text-xs mb-2">
                         {t.contact_or_email}
                       </p>
                       <p className="text-white text-sm font-medium">
@@ -662,7 +650,7 @@ export default function ContactSection() {
           <div className="flex justify-center mt-6">
             <Button
               onClick={() => setShowSuccessDialog(false)}
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-orange-600 hover:bg-orange-700"
             >
               {t.close}
             </Button>

@@ -140,7 +140,7 @@ export default function Footer() {
 
             <Separator className="bg-gray-700" />
 
-            <div className="bg-blue-600 rounded-lg p-4">
+            <div className="bg-orange-600 rounded-lg p-4">
               <h5 className="font-bold mb-2 flex items-center">
                 <Star className="w-4 h-4 mr-2" />
                 {t.footer_special_offer}
@@ -168,7 +168,7 @@ export default function Footer() {
               {t.footer_delivery}
             </span>
             <span className="flex items-center justify-center md:justify-start">
-              <Phone className="w-4 h-4 mr-2 text-blue-400" />
+              <Phone className="w-4 h-4 mr-2 text-orange-400" />
               {t.footer_consultation}
             </span>
           </div>

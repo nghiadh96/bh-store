@@ -34,26 +34,32 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/90 to-gray-900/90"></div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto p-4 relative z-10">
         <div className="text-center max-w-5xl mx-auto my-4 md:my-0 hero-content">
           <Badge
             variant="outline"
-            className="hero-badge bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-gray-200 border-blue-300 dark:border-blue-400 shadow-lg mb-6"
+            className="hero-badge bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-gray-200 border-orange-300 dark:border-orange-400 shadow-lg mb-6"
           >
-            <Star className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400" />
+            <Star className="w-4 h-4 mr-2 text-orange-600 dark:text-orange-400" />
             {t.hero_badge}
           </Badge>
 
-          <h1 className="hero-title">
+          <h2 className="hero-title">
             {t.hero_title}
-            <span className="text-blue-200 dark:text-blue-300 block">
+            <span className="text-orange-200 dark:text-orange-300 block">
               {t.hero_subtitle}
             </span>
-          </h1>
+          </h2>
+
+          <h2 className="hero-title">
+            <span className="text-orange-200 dark:text-orange-300 block font-handwriting text-3xl md:text-4xl lg:text-5xl">
+              {t.hero_sologan}
+            </span>
+          </h2>
 
           <p className="hero-subtitle text-white/90 dark:text-white/80">
             {t.hero_description}
@@ -63,7 +69,7 @@ export default function HeroSection() {
           <div className="hero-buttons">
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-lg px-8 py-4 text-white font-medium shadow-lg hover:shadow-xl md:hover:scale-105 transform duration-200"
+              className="bg-orange-600 hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-orange-600 text-lg px-8 py-4 text-white font-medium shadow-lg hover:shadow-xl md:hover:scale-105 transform duration-200"
               onClick={() => {
                 trackPhoneCall();
                 window.open("tel:0966616636");
@@ -74,7 +80,7 @@ export default function HeroSection() {
             </Button>
             <Button
               size="lg"
-              className="text-lg px-8 py-4 border-2 border-blue-300 text-blue-300 hover:bg-blue-700 hover:text-white dark:bg-white dark:text-blue-700 dark:border-0 dark:hover:bg-gray-100 md:hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
+              className="text-lg px-8 py-4 border-2 border-orange-300 text-orange-300 hover:bg-orange-700 hover:text-white dark:bg-white dark:text-orange-700 dark:border-0 dark:hover:bg-gray-100 md:hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
               onClick={() => {
                 trackZaloChat();
                 window.open("https://zalo.me/0966616636", "_blank");
@@ -99,10 +105,10 @@ export default function HeroSection() {
           {/* Stats */}
           <div className="hero-stats">
             <div className="text-center bg-white/90 dark:bg-gray-800/90 rounded-lg p-4 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-200">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+              <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-2">
                 <Award className="w-6 h-6 text-white" />
               </div>
-              <p className="text-2xl font-bold text-blue-700 dark:text-blue-400">
+              <p className="text-2xl font-bold text-orange-700 dark:text-orange-400">
                 500+
               </p>
               <p className="text-sm text-gray-700 dark:text-gray-200 font-medium">

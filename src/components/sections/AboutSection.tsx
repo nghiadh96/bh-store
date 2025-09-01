@@ -23,7 +23,7 @@ export default function AboutSection() {
           >
             <Badge
               variant="outline"
-              className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
+              className="bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 border-orange-400 dark:border-orange-600 shadow-sm"
             >
               <Award className="w-4 h-4 mr-2" />
               {t.about_title}
@@ -77,7 +77,7 @@ export default function AboutSection() {
               data-aos-once="true"
             >
               <Button
-                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 hover:scale-105 transform duration-200 text-white font-medium shadow-lg hover:shadow-xl"
+                className="bg-orange-600 hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-orange-600 hover:scale-105 transform duration-200 text-white font-medium shadow-lg hover:shadow-xl"
                 onClick={() => smoothScrollTo("portfolio")}
               >
                 <Users className="w-4 h-4 mr-2" />
@@ -101,7 +101,7 @@ export default function AboutSection() {
             data-aos-delay="400"
             data-aos-once="true"
           >
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-orange-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-lg">
               <div className="aspect-video rounded-lg overflow-hidden relative">
                 <img
                   src="/images/about-shop.webp"
@@ -127,7 +127,7 @@ export default function AboutSection() {
                 data-aos-once="true"
               >
                 <div className="text-center bg-white dark:bg-gray-800 rounded-lg p-3 shadow-md">
-                  <p className="text-2xl font-bold text-blue-700 dark:text-blue-400">
+                  <p className="text-2xl font-bold text-orange-700 dark:text-orange-400">
                     500+
                   </p>
                   <p className="text-xs text-gray-700 dark:text-gray-200 font-medium">

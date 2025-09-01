@@ -105,7 +105,7 @@ export default function PortfolioSection() {
         <div className="text-center mb-16" data-aos="fade-up">
           <Badge
             variant="outline"
-            className="mb-4 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-400 dark:border-blue-600 shadow-sm"
+            className="mb-4 bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 border-orange-400 dark:border-orange-600 shadow-sm"
           >
             <Image className="w-4 h-4 mr-2" />
             {t.portfolio_badge}
@@ -139,13 +139,13 @@ export default function PortfolioSection() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full">
+                  <span className="text-xs font-medium text-orange-700 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/50 px-2 py-1 rounded-full">
                     {item.category}
                   </span>
                   <div className="flex space-x-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                     <button
                       onClick={() => handleViewProduct(item)}
-                      className="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-600 transition-colors md:hover:scale-110 transform duration-200"
+                      className="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-orange-100 dark:hover:bg-orange-600 transition-colors md:hover:scale-110 transform duration-200"
                       title={t.portfolio_view}
                     >
                       <Eye className="w-4 h-4 text-gray-600 dark:text-gray-300" />
@@ -173,13 +173,13 @@ export default function PortfolioSection() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-2xl p-8 text-white shadow-xl">
+          <div className="bg-gradient-to-r from-orange-600 to-indigo-600 dark:from-orange-500 dark:to-indigo-500 rounded-2xl p-8 text-white shadow-xl">
             <h3 className="text-2xl font-bold mb-4">{t.portfolio_cta_title}</h3>
-            <p className="text-blue-50 mb-6">{t.portfolio_cta_desc}</p>
+            <p className="text-orange-50 mb-6">{t.portfolio_cta_desc}</p>
             <div className="flex justify-center">
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
+                className="bg-white text-orange-700 hover:bg-gray-100 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
                 onClick={() => smoothScrollTo("contact")}
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
@@ -210,7 +210,7 @@ export default function PortfolioSection() {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {selectedProduct.title}
                   </h3>
-                  <span className="text-sm font-medium text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-orange-700 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/50 px-3 py-1 rounded-full">
                     {selectedProduct.category}
                   </span>
                 </div>
@@ -243,8 +243,8 @@ export default function PortfolioSection() {
           {selectedProduct && (
             <div className="space-y-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Download className="w-8 h-8 text-blue-700" />
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Download className="w-8 h-8 text-orange-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {selectedProduct.title}
@@ -265,7 +265,7 @@ export default function PortfolioSection() {
                   onClick={() =>
                     window.open("https://zalo.me/0966616636", "_blank")
                   }
-                  className="w-full bg-blue-600 hover:bg-blue-700"
+                  className="w-full bg-orange-600 hover:bg-orange-700"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Chat Zalo
