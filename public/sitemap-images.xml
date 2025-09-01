@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Hero Background -->
+  <url>
+    <loc>https://bh-design-media.netlify.app/</loc>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/hero-bg.webp</image:loc>
+      <image:title>BH Design &amp; Media - Thiết kế &amp; In ấn Quảng cáo</image:title>
+      <image:caption>Background hình ảnh thiết kế và in ấn quảng cáo chuyên nghiệp</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://bh-design-media.netlify.app/#about</loc>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/about-shop.webp</image:loc>
+      <image:title>Về chúng tôi - BH Design &amp; Media</image:title>
+      <image:caption>Cửa hàng thiết kế và in ấn quảng cáo tại Đông Thái Ninh, Hưng Yên</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Portfolio Images -->
+  <url>
+    <loc>https://bh-design-media.netlify.app/#portfolio</loc>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-1-banner.webp</image:loc>
+      <image:title>Banner quảng cáo - Thiết kế chuyên nghiệp</image:title>
+      <image:caption>Banner quảng cáo chất lượng cao, thiết kế sáng tạo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-2-poster.webp</image:loc>
+      <image:title>Poster quảng cáo - In ấn chất lượng</image:title>
+      <image:caption>Poster quảng cáo in phun khổ lớn, màu sắc sống động</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-3-standee.webp</image:loc>
+      <image:title>Standee quảng cáo - Thiết kế độc đáo</image:title>
+      <image:caption>Standee quảng cáo thiết kế độc đáo, chất liệu cao cấp</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-4-billboard.webp</image:loc>
+      <image:title>Biển quảng cáo - Thi công chuyên nghiệp</image:title>
+      <image:caption>Biển quảng cáo ngoài trời, thi công chuyên nghiệp</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-5-decal.webp</image:loc>
+      <image:title>Decal quảng cáo - In UV chất lượng</image:title>
+      <image:caption>Decal quảng cáo in UV, độ bền màu cao</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-6-photocopy.webp</image:loc>
+      <image:title>Photocopy - Dịch vụ in ấn</image:title>
+      <image:caption>Dịch vụ photocopy chất lượng cao, giá cả hợp lý</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-7-signage.webp</image:loc>
+      <image:title>Biển hiệu - Thiết kế và thi công</image:title>
+      <image:caption>Biển hiệu cửa hàng, thiết kế và thi công chuyên nghiệp</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bh-design-media.netlify.app/images/portfolio-8-led.webp</image:loc>
+      <image:title>Biển LED - Công nghệ hiện đại</image:title>
+      <image:caption>Biển quảng cáo LED, công nghệ hiện đại, tiết kiệm điện</image:caption>
+    </image:image>
+  </url>
+</urlset>
