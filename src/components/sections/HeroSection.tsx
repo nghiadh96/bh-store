@@ -56,7 +56,7 @@ export default function HeroSection() {
           </h2>
 
           <h2 className="hero-title">
-            <span className="text-orange-200 dark:text-orange-300 block font-handwriting text-3xl md:text-4xl lg:text-5xl">
+            <span className="text-yellow-300 dark:text-yellow-200 block font-handwriting text-3xl md:text-4xl lg:text-5xl">
               {t.hero_sologan}
             </span>
           </h2>
@@ -80,7 +80,7 @@ export default function HeroSection() {
             </Button>
             <Button
               size="lg"
-              className="text-lg px-8 py-4 border-2 border-orange-300 text-orange-300 hover:bg-orange-700 hover:text-white dark:bg-white dark:text-orange-700 dark:border-0 dark:hover:bg-gray-100 md:hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
+              className="text-lg px-8 py-4 border-2 border-orange-500 text-orange-100 bg-orange-600/20 hover:bg-orange-700 hover:text-white dark:bg-white dark:text-orange-700 dark:border-0 dark:hover:bg-gray-100 md:hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
               onClick={() => {
                 trackZaloChat();
                 window.open("https://zalo.me/0966616636", "_blank");
@@ -91,7 +91,7 @@ export default function HeroSection() {
             </Button>
             <Button
               size="lg"
-              className="text-lg px-8 py-4 border-2 border-green-300 text-green-300 hover:bg-green-700 hover:text-white dark:bg-white dark:text-green-700 dark:border-0 dark:hover:bg-gray-100 md:hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
+              className="text-lg px-8 py-4 border-2 border-green-500 text-green-100 bg-green-600/20 hover:bg-green-700 hover:text-white dark:bg-white dark:text-green-700 dark:border-0 dark:hover:bg-gray-100 md:hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl"
               onClick={() => {
                 trackScrollToSection("portfolio");
                 smoothScrollTo("portfolio");

@@ -90,10 +90,10 @@ export default function PricingSection() {
           {getPricingPlans(t).map((plan, index) => (
             <Card
               key={index}
-              className={`relative ${
+              className={`relative hover:shadow-2xl hover:scale-102 transition-all duration-300 ${
                 plan.popular
                   ? "border-2 border-green-500 shadow-xl scale-105"
-                  : "border border-gray-200"
+                  : "border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600"
               }`}
             >
               {plan.popular && (
@@ -105,28 +105,28 @@ export default function PricingSection() {
                 </div>
               )}
 
-              <CardHeader className="text-center pb-4">
+              <CardHeader className="text-center pb-6">
                 <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
                   {plan.title}
                 </CardTitle>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold text-orange-700">
+                <div className="mt-6 mb-2">
+                  <span className="text-5xl font-extrabold text-transparent bg-gradient-to-r from-orange-600 to-orange-800 bg-clip-text dark:from-orange-400 dark:to-orange-600">
                     {plan.price}
                   </span>
                 </div>
-                <CardDescription className="text-gray-700 dark:text-gray-200 mt-2">
+                <CardDescription className="text-gray-600 dark:text-gray-300 mt-3 text-lg">
                   {plan.description}
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="pt-0">
-                <ul className="space-y-3 mb-8">
+              <CardContent className="pt-2">
+                <ul className="space-y-4 mb-10">
                   {plan.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="flex items-center text-sm text-gray-700 dark:text-gray-200"
+                      className="flex items-center text-base text-gray-700 dark:text-gray-200"
                     >
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-4 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -145,7 +145,7 @@ export default function PricingSection() {
                     {t.pricing_call_quote}
                   </Button>
                   <Button
-                    className="w-full bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/20 dark:text-orange-300 dark:hover:bg-orange-900/30 hover:scale-105 transform duration-200 font-medium shadow-sm border border-orange-200 dark:border-orange-700"
+                    className="w-full bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-800/50 dark:text-orange-100 dark:hover:bg-orange-800/70 hover:scale-105 transform duration-200 font-medium shadow-sm border border-orange-200 dark:border-orange-600"
                     onClick={() =>
                       window.open("https://zalo.me/0966616636", "_blank")
                     }
@@ -236,7 +236,7 @@ export default function PricingSection() {
               </Button>
               <Button
                 size="lg"
-                className="bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/20 dark:text-orange-300 dark:hover:bg-orange-900/30 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl border border-orange-200 dark:border-orange-700"
+                className="bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-800/50 dark:text-orange-100 dark:hover:bg-orange-800/70 hover:scale-105 transform duration-200 font-medium shadow-lg hover:shadow-xl border border-orange-200 dark:border-orange-600"
                 onClick={() =>
                   window.open("https://zalo.me/0966616636", "_blank")
                 }

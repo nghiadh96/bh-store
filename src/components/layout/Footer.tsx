@@ -24,16 +24,16 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="font-bold text-lg">BH Design & Media</h3>
-                <p className="text-sm text-gray-300">{t.footer_tagline}</p>
+                <p className="text-sm text-gray-200">{t.footer_tagline}</p>
               </div>
             </div>
-            <p className="text-gray-300 text-sm">{t.footer_description}</p>
+            <p className="text-gray-200 text-sm">{t.footer_description}</p>
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/tuanbaodtb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 <span className="text-xl">📘</span>
               </a>
@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Services */}
           <div className="space-y-4">
             <h4 className="font-bold text-lg">{t.services_title}</h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-gray-200">
               <li>🎨 {t.services_design_title}</li>
               <li>🖨️ {t.services_printing_title}</li>
               <li>🏗️ {t.services_construction_title}</li>
@@ -76,7 +76,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => smoothScrollTo("home")}
-                  className="text-gray-300 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
+                  className="text-gray-200 hover:text-white transition-colors md:hover:scale-105 transform duration-200"
                 >
                   {t.nav_home}
                 </button>
@@ -119,7 +119,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="font-bold text-lg">{t.footer_contact_info}</h4>
-            <div className="space-y-3 text-sm text-gray-300">
+            <div className="space-y-3 text-sm text-gray-200">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
                 <span>0966.616.636</span>
@@ -157,7 +157,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <Separator className="bg-gray-700 my-8" />
-        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center text-sm text-gray-300">
+        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:justify-between md:items-center text-sm text-gray-200">
           <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-4">
             <span className="flex items-center justify-center md:justify-start">
               <Star className="w-4 h-4 mr-2 text-yellow-400" />

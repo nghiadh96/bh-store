@@ -279,7 +279,7 @@ export default function Header() {
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-all duration-200 ${
                   activeSection === "services"
                     ? "text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/30 border-l-4 border-orange-700 dark:border-orange-400"
-                    : "text-gray-700 hover:text-orange-700 hover:bg-gray-50"
+                    : "text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400 hover:bg-gray-50 dark:hover:bg-gray-700"
                 }`}
               >
                 {t.nav_services}
@@ -292,7 +292,7 @@ export default function Header() {
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-all duration-200 ${
                   activeSection === "portfolio"
                     ? "text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/30 border-l-4 border-orange-700 dark:border-orange-400"
-                    : "text-gray-700 hover:text-orange-700 hover:bg-gray-50"
+                    : "text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400 hover:bg-gray-50 dark:hover:bg-gray-700"
                 }`}
               >
                 {t.nav_portfolio}
@@ -305,7 +305,7 @@ export default function Header() {
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-all duration-200 ${
                   activeSection === "pricing"
                     ? "text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/30 border-l-4 border-orange-700 dark:border-orange-400"
-                    : "text-gray-700 hover:text-orange-700 hover:bg-gray-50"
+                    : "text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400 hover:bg-gray-50 dark:hover:bg-gray-700"
                 }`}
               >
                 Báo giá
@@ -318,7 +318,7 @@ export default function Header() {
                 className={`block w-full text-left py-2 px-3 rounded-md font-medium transition-all duration-200 ${
                   activeSection === "contact"
                     ? "text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/30 border-l-4 border-orange-700 dark:border-orange-400"
-                    : "text-gray-700 hover:text-orange-700 hover:bg-gray-50"
+                    : "text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400 hover:bg-gray-50 dark:hover:bg-gray-700"
                 }`}
               >
                 Liên hệ
